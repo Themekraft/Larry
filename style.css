@@ -653,19 +653,19 @@ display: block;
 	margin: auto;
 }
 #topnav-title {
-		line-height: 58px;
+		line-height: 54px;
 		vertical-align: middle;
-		padding-left: 10px;
+		/*padding-left: 10px;*/
     float: left;
-    font-size: 29px;
+    font-size: 17px;
     font-weight: normal;
-    display: none;
+    display: block;
 }
-@media (min-width: 550px) {
+/*@media (min-width: 550px) {
   #topnav-title {
     display: block;
   }
-}
+}*/
 #topnav #main-menu {
 	display: none;
 }
@@ -677,6 +677,7 @@ display: block;
 	}
 	#topnav-title {
 		line-height: 72px;
+		font-size: 21px;
 	}
 	#topnav #main-menu,
 	.tk-extra-nav .tk-profile {
@@ -987,13 +988,13 @@ display: block;
 /* Main Content */
 #mainwrap {
 	padding-top: 0;
-	/*margin-top: 58px;*/
+	margin-top: 58px;
 	overflow: hidden;
 }
 
 @media (min-width: 992px) {
 	#mainwrap {
-		/*margin-top: 72px;*/
+		margin-top: 72px;
 	}
 }
 
@@ -1098,7 +1099,7 @@ display: block;
   padding: 0 8px 4px;
 }
 .tk-entry-title {
-	font-family: 'Open Sans Condensed', 'Oswald', Helvetica, Arial, sans-serif;
+	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-size: 17px;
 	color: #666;

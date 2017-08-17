@@ -35,7 +35,6 @@ get_header(); ?>
           </div>
 
 
-					<?php _tk_content_nav( 'nav-below' ); ?>
 
 				<?php else : ?>
 
