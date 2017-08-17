@@ -61,12 +61,12 @@
 
 
 
-<header id="topnav-mini">
+<!-- <header id="topnav-mini">
 	<div class="container nopad">
 		<div class="row">
 			<div class="col-xs-12">
 
-				<!-- The Top Nav Mini -->
+				<?php // The Top Nav Mini ?>
 				<?php wp_nav_menu(
 					array(
 						'theme_location' 	=> 'topnav-mini',
@@ -83,7 +83,7 @@
 			</div>
 		</div>
 	</div>
-</header>
+</header> -->
 
 
 
@@ -122,12 +122,14 @@
 									</li>
 								<?php } ?>
 
+								<?php if ( bp_is_active( 'notifications' ) ) { ?>
 								<li class="tk-notifications-li">
 									<a class="tk-notifications <?php if ( bp_has_notifications() ) { echo ' new '; } ?>" href="<?php bp_loggedin_user_link(); ?>notifications">
 										<i class="fa fa-bell"></i>
 										<span class="tk-marker <?php if ( bp_has_notifications() ) { echo ' new '; } ?>"></span>
 									</a>
 								</li>
+								<?php } ?>
 
 							<?php } ?>
 
