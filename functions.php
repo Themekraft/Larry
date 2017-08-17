@@ -54,18 +54,18 @@ function _tk_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on _tk, use a find and replace
-	 * to change '_tk' to the name of your theme in all the template files
+	 * to change 'tk_larry' to the name of your theme in all the template files
 	*/
-	load_theme_textdomain( '_tk', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'tk_larry', get_template_directory() . '/languages' );
 
 	/**
 	 * This theme uses wp_nav_menu() in three locations.
 	*/
 	register_nav_menus( array(
-		'primary'  => __( 'Header Top Menu', '_tk' ),
-		'slide-nav'  => __( 'Sliding Menu', '_tk' ),
-		'bp-topnav'  => __( 'BuddyPress Top Nav Drop Down', '_tk' ),
-		'footer-nav'  => __( 'Footer Menu', '_tk' ),
+		'primary'  => __( 'Header Top Menu', 'tk_larry' ),
+		'slide-nav'  => __( 'Sliding Menu', 'tk_larry' ),
+		'bp-topnav'  => __( 'BuddyPress Top Nav Drop Down', 'tk_larry' ),
+		'footer-nav'  => __( 'Footer Menu', 'tk_larry' ),
 	) );
 
 }
@@ -79,8 +79,8 @@ function _tk_widgets_init() {
 
   // sidebar
 	register_sidebar( array(
-    		'name'          => __( 'Sidebar', '_tk' ),
-				'description' 	=> __( 'This is the sidebar used by default.', '_tk'),
+    		'name'          => __( 'Sidebar', 'tk_larry' ),
+				'description' 	=> __( 'This is the sidebar used by default.', 'tk_larry'),
     		'id'            => 'sidebar-1',
     		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     		'after_widget'  => '</aside>',
@@ -90,8 +90,8 @@ function _tk_widgets_init() {
 
 		// sidebar
 		register_sidebar( array(
-	    		'name'          => __( 'Sidebar Products', 'MPro' ),
-					'description' 	=> __( 'This is the sidebar used for the products single view.', 'MPro'),
+	    		'name'          => __( 'Sidebar Products', 'tk_larry' ),
+					'description' 	=> __( 'This is the sidebar used for the products single view.', 'tk_larry'),
 	    		'id'            => 'sidebar-product',
 	    		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	    		'after_widget'  => '</aside>',
@@ -248,7 +248,7 @@ function tk_posted_on() {
 		$time_string
 	);
 
-	printf( __( '<span class="posted-on"><small><i class="fa fa-calendar"></i>&nbsp;&nbsp;%1$s</small></span>', '_tk' ),
+	printf( __( '<span class="posted-on"><small><i class="fa fa-calendar"></i>&nbsp;&nbsp;%1$s</small></span>', 'tk_larry' ),
 		$time_string
 	);
 }

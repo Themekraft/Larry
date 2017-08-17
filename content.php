@@ -24,14 +24,14 @@
 				<div class="post-date entry-meta">
 					<?php
 							/* translators: used between list items, there is a space after the comma */
-							$categories_list = get_the_category_list( __( ', ', '_tk' ) ); ?>
+							$categories_list = get_the_category_list( __( ', ', 'tk_larry' ) ); ?>
 
 						<div class="cat-links" style="text-transform: uppercase;">
 							<i class="fa fa-copy" style="margin-right: 4px; display: none;"></i>
 							<?php
 
 							if ( $categories_list && _tk_categorized_blog() ) :
-								printf( __( '%1$s', '_tk' ), $categories_list );
+								printf( __( '%1$s', 'tk_larry' ), $categories_list );
 							else:
 								echo 'UNCATEGORISED';
 							endif; // End if categories
@@ -57,10 +57,10 @@
 			<!-- <footer class="entry-meta">
 
 				<?php // if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-					<span><small class="comments-link"><?php // comments_popup_link( __( 'Leave a comment', '_tk' ), __( '1 Comment', '_tk' ), __( '% Comments', '_tk' ) ); ?></small></span>
+					<span><small class="comments-link"><?php // comments_popup_link( __( 'Leave a comment', 'tk_larry' ), __( '1 Comment', 'tk_larry' ), __( '% Comments', 'tk_larry' ) ); ?></small></span>
 				<?php // endif; ?>
 
-				<?php // edit_post_link( __( 'Edit', '_tk' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php // edit_post_link( __( 'Edit', 'tk_larry' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>
 			-->
 

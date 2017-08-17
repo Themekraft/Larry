@@ -30,21 +30,21 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 
 				<?php if ( bp_current_user_can( 'bp_xprofile_change_field_visibility' ) ) : ?>
 					<p class="field-visibility-settings-toggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
-						<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'appp_ion' ), bp_get_the_profile_field_visibility_level_label() ) ?> <a href="#" class="visibility-toggle-link"><?php _e( 'Change', 'appp_ion' ); ?></a>
+						<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'tk_larry' ), bp_get_the_profile_field_visibility_level_label() ) ?> <a href="#" class="visibility-toggle-link"><?php _e( 'Change', 'tk_larry' ); ?></a>
 					</p>
 
 					<div class="field-visibility-settings" style="display: none;" id="field-visibility-settings-<?php bp_the_profile_field_id() ?>">
 						<fieldset>
-							<legend><?php _e( 'Who can see this field?', 'appp_ion' ) ?></legend>
+							<legend><?php _e( 'Who can see this field?', 'tk_larry' ) ?></legend>
 
 							<?php bp_profile_visibility_radio_buttons() ?>
 
 						</fieldset>
-						<a class="field-visibility-settings-close" href="#"><?php _e( 'Close', 'appp_ion' ) ?></a>
+						<a class="field-visibility-settings-close" href="#"><?php _e( 'Close', 'tk_larry' ) ?></a>
 					</div>
 				<?php else : ?>
 					<div class="field-visibility-settings-notoggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
-						<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'appp_ion' ), bp_get_the_profile_field_visibility_level_label() ) ?>
+						<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'tk_larry' ), bp_get_the_profile_field_visibility_level_label() ) ?>
 					</div>
 				<?php endif ?>
 
@@ -58,7 +58,7 @@ if ( bp_has_profile( 'profile_group_id=' . bp_get_current_profile_group_id() ) )
 	<?php do_action( 'bp_after_profile_field_content' ); ?>
 
 	<div class="submit">
-		<input type="submit" class="button button-primary" name="profile-group-edit-submit" id="profile-group-edit-submit" value="<?php esc_attr_e( 'Save Changes', 'appp_ion' ); ?> " />
+		<input type="submit" class="button button-primary" name="profile-group-edit-submit" id="profile-group-edit-submit" value="<?php esc_attr_e( 'Save Changes', 'tk_larry' ); ?> " />
 	</div>
 
 	<input type="hidden" name="field_ids" id="field_ids" value="<?php bp_the_profile_group_field_ids(); ?>" />
