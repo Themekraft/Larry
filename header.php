@@ -66,11 +66,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 
-				<div class="slogan">
-					Buy &amp; Sell Cool Sustainable Products
-				</div>
-
-				<!-- The Slide Nav -->
+				<!-- The Top Nav Mini -->
 				<?php wp_nav_menu(
 					array(
 						'theme_location' 	=> 'topnav-mini',
@@ -101,7 +97,7 @@
 						<!-- <img id="logo_img" title="matribe home" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/themes/quik/screenshot.png" alt="matribe – beta" style="max-height: 88px;" /> -->
 					</div>
 					<div id="topnav-title">
-						<div class="matribe">MATRIBE</div>
+						<?php bloginfo( 'name' ); ?>
 					</div>
 				</a>
 
@@ -160,19 +156,18 @@
 										<?php do_action( 'tk_dropdown_first' ); ?>
 
 
-										<li><a href="<?php echo home_url(); ?>" class="xlighter" title="">Dashboard</a></li>
-
-										<?php if( defined('WCV_VERSION') ) { ?>
-												<?php if ( current_user_can( 'vendor' ) ) : ?>
-														<li><a href="<?php bp_loggedin_user_link(); ?>vendor-dashboard/vendor-dashboard-products/edit/" class="xlighter" title="">Add Product</a></li>
-												<?php endif; ?>
-										<?php } ?>
-
-										<li><a href="/events/community/add" class="xlighter" title="">Add Event</a></li>
-
-										<?php if ( ! current_user_can( 'vendor' ) ) : ?>
-											<li><a href="/sell-your-products/" class="xlighter" title="">Open Your Store</a></li>
-										<?php endif; ?>
+										<!-- The BuddyPress TopNav Drop Down -->
+										<?php wp_nav_menu(
+											array(
+												'theme_location' 	=> 'bp-topnav',
+												'depth'             => 2,
+												'container'         => '',
+												'container_class'   => '',
+												'menu_class' 		=> '',
+												'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+												'menu_id'			=> 'bp-topnav-dropdown',
+												'walker' 			=> new wp_bootstrap_navwalker()
+											)); ?>
 
 
 

@@ -13,12 +13,13 @@ Hi.
 
 Just call me Larry.
 
-Forget theming, that is so 2010.
-
-Use me as a quick hackable starting point,
-and add some awesome content with new page builders like Elementor or Tailor.
+Use me as a quick hackable starting point for your next awesome WordPress project.
 
 Enjoy, Larry
+
+
+
++++++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -46,9 +47,6 @@ More Credits:
 
  * http://http://fontawesome.io/
 
-4. AnimateCSS
-
- * https://daneden.github.io/animate.css/
 
 
 *************************************************************

@@ -2,9 +2,9 @@
 Theme Name: Larry
 Theme URI: https://github.com/Themekraft/larry
 Author: Konrad Sroka & Sven Lehnert
-Author URI: http://themekraft.com
+Author URI: https://themekraft.com
 Description: A new age starter theme. Perfect for page builders like Elementor and Tailor. Another tool by ThemeKraft.
-Version: 0.1
+Version: 1.0 Beta 1
 License: GNU General Public License v3.0 /
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: coffee, surf
@@ -15,13 +15,12 @@ Hi.
 
 Just call me Larry.
 
-Forget theming, that is so 2010.
-
-Use me as a quick hackable starting point,
-and add some awesome content with new page builders like Elementor or Tailor.
+Use me as a quick hackable starting point for your next awesome project.
 
 Enjoy, Larry
 
+
+++++++++++++++++++++++++++++++
 
 
 Based on _tk
@@ -49,9 +48,6 @@ More Credits:
 
  * http://http://fontawesome.io/
 
-4. AnimateCSS
-
- * https://daneden.github.io/animate.css/
 
 
 *************************************************************
@@ -59,6 +55,9 @@ More Credits:
 The Larry theme on Github - https://github.com/Themekraft/larry/
 
 **************************************************************/
+
+
+
 
 /* Globals */
 
@@ -745,6 +744,11 @@ display: block;
   text-align: center;
   vertical-align: middle;
   right: 58px;
+}
+#bp-topnav-dropdown {
+	float: none;
+	width: 100%;
+  padding: 0;
 }
 #topnav .tk-extra-nav li {
   display: block;
@@ -2076,7 +2080,11 @@ img.avatar {
 }
 
 #af-welcome-card-main {
-	display: none;
+	/*display: none;*/
+	/*padding: 5px;*/
+	/*border: 1px solid #ddd;
+	background: #fff;*/
+	margin-bottom: 20px;
 }
 .front-page #af-welcome-card-main {
 	display: block;

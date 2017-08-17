@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 		/**
@@ -61,6 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * @hooked woocommerce_template_single_add_to_cart - 30
 			 * @hooked woocommerce_template_single_meta - 40
 			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked WC_Structured_Data::generate_product_data() - 60
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
@@ -86,19 +87,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     </div>
 
-    <div class="sidebar col-xs-12 col-md-4">
 
-      <?php do_action( 'tk_single_product_sidebar_first' ); ?>
+    <?php get_sidebar( 'product' ); ?>
 
-      <div class="tk-product-meta-sidebar">
-        <?php do_action( 'tk_single_product_sidebar_meta' ); ?>
-      </div>
-
-      <?php get_sidebar( 'product' ); ?>
-
-      <?php do_action( 'tk_single_product_sidebar_last' ); ?>
-
-    </div>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

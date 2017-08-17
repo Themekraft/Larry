@@ -3,7 +3,7 @@
 	<?php global $bp; // echo 'action:'.$bp->current_action; ?>
 
 	<?php if ( bp_is_my_profile() ) { ?>
-		<p id="back-to-dashboard"><a class="btn btn-primary btn-small" href="<?php echo home_url(); ?>" title="Take me home"><i class="fa fa-angle-left"></i> &nbsp;Dashboard</a></p>
+		<!-- <p id="back-to-dashboard"><a class="btn btn-primary btn-small" href="<?php echo home_url(); ?>" title="Take me home"><i class="fa fa-angle-left"></i> &nbsp;Dashboard</a></p> -->
 	<?php } ?>
 
 	<?php if ( $bp->current_component == 'profile' && $bp->current_action == 'public' ) { ?>
@@ -33,9 +33,9 @@
 
 			<div id="profile-sidebar" class="af-dashboard-home-tile">
 
-				<?php if ( bp_is_my_profile() ) { ?>
+				<?php if ( bp_is_my_profile() && $bp->current_component != 'profile' && $bp->current_action != 'public' ) { ?>
 
-					<div id="af-welcome-card-main" class="af-home-welcome-card">
+					<div id="af-welcome-card-main" class="af-home-welcome-card well well-alt">
 						<div class="af-dashboard-avatar">
 							<a href="<?php bp_displayed_user_link(); ?>" title="View my Profile">
 								<?php bp_loggedin_user_avatar( 'type=full' ); ?>
@@ -49,11 +49,7 @@
 				<div id="item-nav">
 					<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
 						<ul>
-							<?php if ( bp_is_my_profile() ) { ?>
-								<?php get_template_part( 'tk-dashboard' ); ?>
-							<?php } else { ?>
-								<?php bp_get_displayed_user_nav(); ?>
-							<?php } ?>
+							<?php bp_get_displayed_user_nav(); ?>
 							<?php do_action( 'bp_member_options_nav' ); ?>
 						</ul>
 					</div>

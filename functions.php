@@ -64,6 +64,7 @@ function _tk_setup() {
 	register_nav_menus( array(
 		'primary'  => __( 'Header Top Menu', '_tk' ),
 		'slide-nav'  => __( 'Sliding Menu', '_tk' ),
+		'bp-topnav'  => __( 'BuddyPress Top Nav Drop Down', '_tk' ),
 		'footer-nav'  => __( 'Footer Menu', '_tk' ),
 	) );
 
@@ -78,8 +79,8 @@ function _tk_widgets_init() {
 
   // sidebar
 	register_sidebar( array(
-    		'name'          => __( 'Sidebar', 'MPro' ),
-				'description' 	=> __( 'This is the sidebar used by default.', 'MPro'),
+    		'name'          => __( 'Sidebar', '_tk' ),
+				'description' 	=> __( 'This is the sidebar used by default.', '_tk'),
     		'id'            => 'sidebar-1',
     		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     		'after_widget'  => '</aside>',
@@ -473,24 +474,35 @@ if ( class_exists( 'BuddyPress' ) ) {
 }
 
 
-/**
- * Display LifterLMS Course and Lesson sidebars
- * on courses and lessons in place of the sidebar returned by
- * this function
- * @param    string     $id    default sidebar id (an empty string)
- * @return   string
- */
-function lifter_lms_sidebar_function( $id ) {
-	$my_sidebar_id = 'sidebar-1';
-	return $my_sidebar_id;
-}
-add_filter( 'llms_get_theme_default_sidebar', 'lifter_lms_sidebar_function' );
 
-/**
- * Declare explicit theme support for LifterLMS course and lesson sidebars
- * @return   void
- */
-function my_llms_theme_support(){
-	add_theme_support( 'lifterlms-sidebars' );
+
+// Lifter LMS theme compatibility
+
+if ( class_exists( 'LifterLMS' ) ) {
+
+
+	/**
+	 * Display LifterLMS Course and Lesson sidebars
+	 * on courses and lessons in place of the sidebar returned by
+	 * this function
+	 * @param    string     $id    default sidebar id (an empty string)
+	 * @return   string
+	 */
+	function lifter_lms_sidebar_function( $id ) {
+		$my_sidebar_id = 'sidebar-1';
+		return $my_sidebar_id;
+	}
+	add_filter( 'llms_get_theme_default_sidebar', 'lifter_lms_sidebar_function' );
+
+
+	/**
+	 * Declare explicit theme support for LifterLMS course and lesson sidebars
+	 * @return   void
+	 */
+	function my_llms_theme_support(){
+		add_theme_support( 'lifterlms-sidebars' );
+	}
+	add_action( 'after_setup_theme', 'my_llms_theme_support' );
+
+
 }
-add_action( 'after_setup_theme', 'my_llms_theme_support' );
