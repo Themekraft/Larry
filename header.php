@@ -13,8 +13,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -94,7 +92,6 @@
 
 				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="matribe home" rel="home">
 					<div id="topnav-logo">
-						<!-- <img id="logo_img" title="matribe home" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/themes/quik/screenshot.png" alt="matribe – beta" style="max-height: 88px;" /> -->
 					</div>
 					<div id="topnav-title">
 						<?php bloginfo( 'name' ); ?>
