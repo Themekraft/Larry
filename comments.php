@@ -27,7 +27,7 @@ if ( post_password_required() )
 		<header>
 			<h2 class="comments-title">
 				<?php
-					printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'tk_larry' ),
+					printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'larry' ),
 						number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 				?>
 			</h2>
@@ -35,10 +35,10 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h5 class="screen-reader-text"><?php _e( 'Comment navigation', 'tk_larry' ); ?></h5>
+			<h5 class="screen-reader-text"><?php _e( 'Comment navigation', 'larry' ); ?></h5>
 			<ul class="pager">
-				<li class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'tk_larry' ) ); ?></li>
-				<li class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'tk_larry' ) ); ?></li>
+				<li class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'larry' ) ); ?></li>
+				<li class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'larry' ) ); ?></li>
 			</ul>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
@@ -57,9 +57,9 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'tk_larry' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'tk_larry' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'tk_larry' ) ); ?></div>
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'larry' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'larry' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'larry' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
@@ -69,16 +69,16 @@ if ( post_password_required() )
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'tk_larry' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'larry' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form( $args = array(
 			  'id_form'           => 'commentform',  // that's the wordpress default value! delete it or edit it ;)
 			  'id_submit'         => 'commentsubmit',
-			  'title_reply'       => __( 'Leave a Reply', 'tk_larry' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'title_reply_to'    => __( 'Leave a Reply to %s', 'tk_larry' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'cancel_reply_link' => __( 'Cancel Reply', 'tk_larry' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'label_submit'      => __( 'Post Comment', 'tk_larry' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'title_reply'       => __( 'Leave a Reply', 'larry' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'title_reply_to'    => __( 'Leave a Reply to %s', 'larry' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'cancel_reply_link' => __( 'Cancel Reply', 'larry' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'label_submit'      => __( 'Post Comment', 'larry' ),  // that's the wordpress default value! delete it or edit it ;)
 
 			  'comment_field' =>  '<p><textarea placeholder="Start typing..." id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 

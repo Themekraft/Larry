@@ -27,14 +27,14 @@
 					<div class="post-date entry-meta">
 						<?php
 								/* translators: used between list items, there is a space after the comma */
-								$categories_list = get_the_category_list( __( ', ', 'tk_larry' ) ); ?>
+								$categories_list = get_the_category_list( __( ', ', 'larry' ) ); ?>
 
 							<small class="cat-links" style="text-transform: uppercase;">
 								<i class="fa fa-copy" style="margin-right: 4px; display: none;"></i>
 								<?php
 
 								if ( $categories_list && _tk_categorized_blog() ) :
-									printf( __( '%1$s', 'tk_larry' ), $categories_list );
+									printf( __( '%1$s', 'larry' ), $categories_list );
 								else:
 									echo 'UNCATEGORISED';
 								endif; // End if categories

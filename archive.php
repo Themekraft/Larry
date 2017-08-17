@@ -34,7 +34,7 @@ get_header(); ?>
 										 * what author we're dealing with (if that is the case).
 										*/
 										the_post();
-										printf( __( 'Author: %s', 'tk_larry' ), '<span class="vcard">' . get_the_author() . '</span>' );
+										printf( __( 'Author: %s', 'larry' ), '<span class="vcard">' . get_the_author() . '</span>' );
 										/* Since we called the_post() above, we need to
 										 * rewind the loop back to the beginning that way
 										 * we can run the loop properly, in full.
@@ -42,31 +42,31 @@ get_header(); ?>
 										rewind_posts();
 
 									elseif ( is_day() ) :
-										printf( __( 'Day: %s', 'tk_larry' ), '<span>' . get_the_date() . '</span>' );
+										printf( __( 'Day: %s', 'larry' ), '<span>' . get_the_date() . '</span>' );
 
 									elseif ( is_month() ) :
-										printf( __( 'Month: %s', 'tk_larry' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+										printf( __( 'Month: %s', 'larry' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 									elseif ( is_year() ) :
-										printf( __( 'Year: %s', 'tk_larry' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+										printf( __( 'Year: %s', 'larry' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 									elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-										_e( 'Asides', 'tk_larry' );
+										_e( 'Asides', 'larry' );
 
 									elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-										_e( 'Images', 'tk_larry');
+										_e( 'Images', 'larry');
 
 									elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-										_e( 'Videos', 'tk_larry' );
+										_e( 'Videos', 'larry' );
 
 									elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-										_e( 'Quotes', 'tk_larry' );
+										_e( 'Quotes', 'larry' );
 
 									elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-										_e( 'Links', 'tk_larry' );
+										_e( 'Links', 'larry' );
 
 									else :
-										_e( 'Archives', 'tk_larry' );
+										_e( 'Archives', 'larry' );
 
 									endif;
 								?>
