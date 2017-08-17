@@ -460,9 +460,9 @@ if ( class_exists( 'BuddyPress' ) ) {
 		} else {
 
 			global $post; global $bp;
-			if ( bp_is_activity_front_page() ) {
+			// if ( bp_is_activity_front_page() ) {
 					$title = $post->post_title;
-			}
+			// }
 
 			return $title;
 
