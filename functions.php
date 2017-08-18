@@ -214,7 +214,10 @@ require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
 require get_template_directory() . '/includes/admin/page-options.php';
 require get_template_directory() . '/includes/admin/customizer-options.php';
 
+//require get_template_directory() . '/includes/resources/merlin/merlin.php';
 
+//require get_parent_theme_file_path( '/includes/resources/merlin/merlin.php' );
+//require get_parent_theme_file_path( '/includes/merlin-config.php' );
 
 // Disable Comments on Media Attachments
 function filter_media_comment_status( $open, $post_id ) {
@@ -499,3 +502,46 @@ if ( class_exists( 'LifterLMS' ) ) {
 
 
 }
+
+
+// Create a helper function for easy SDK access.
+function tk_larry_fs() {
+	global $tk_larry_fs;
+
+	if ( ! isset( $tk_larry_fs ) ) {
+		// Include Freemius SDK.
+		require_once dirname(__FILE__) . '/includes/resources/freemius-sdk/start.php';
+
+		$tk_larry_fs = fs_dynamic_init( array(
+			'id'                  => '1300',
+			'slug'                => 'larry',
+			'type'                => 'theme',
+			'public_key'          => 'pk_39a4c071e43fb863bb2dfb8eda7c7',
+			'is_premium'          => false,
+			'has_addons'          => false,
+			'has_paid_plans'      => false,
+			'is_org_compliant'    => false,
+			'menu'                => array(
+				'override_exact' => true,
+				'first-path'     => 'themes.php',
+				'support'        => false,
+			),
+		) );
+	}
+
+	return $tk_larry_fs;
+}
+
+// Init Freemius.
+tk_larry_fs();
+// Signal that SDK was initiated.
+do_action( 'tk_larry_fs_loaded' );
+
+function tk_larry_fs_settings_url() {
+	return admin_url( 'admin.php?page=bp_wc_vendors_screen' );
+}
+
+tk_larry_fs()->add_filter( 'connect_url', 'tk_larry_fs_settings_url' );
+tk_larry_fs()->add_filter( 'after_skip_url', 'tk_larry_fs_settings_url' );
+tk_larry_fs()->add_filter( 'after_connect_url', 'tk_larry_fs_settings_url' );
+tk_larry_fs()->add_filter( 'after_pending_connect_url', 'tk_larry_fs_settings_url' );
