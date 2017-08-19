@@ -40,17 +40,15 @@ function _tk_setup() {
 	/**
 	 * Enable support for Post Formats
 	*/
-	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	/**
 	 * Setup the WordPress core custom background feature.
 	*/
-	// add_theme_support( 'custom-background', apply_filters( '_tk_custom_background_args', array(
-	// 	'default-color' => '',
-	// 	'default-image' => '',
-	// ) ) );
-
-	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-background', apply_filters( '_tk_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 
 	/**
 	 * Make theme available for translation
@@ -64,9 +62,9 @@ function _tk_setup() {
 	 * This theme uses wp_nav_menu() in three locations.
 	*/
 	register_nav_menus( array(
-		'primary'  => __( 'Top Nav - Large Screen', 'larry' ),
-		'slide-nav'  => __( 'Sliding Nav - Mobile', 'larry' ),
-		'bp-topnav'  => __( 'BuddyPress - Top Nav Profile Drop Down', 'larry' ),
+		'primary'  => __( 'Header Top Menu', 'larry' ),
+		'slide-nav'  => __( 'Sliding Menu', 'larry' ),
+		'bp-topnav'  => __( 'BuddyPress Top Nav Drop Down', 'larry' ),
 		'footer-nav'  => __( 'Footer Menu', 'larry' ),
 	) );
 
@@ -201,7 +199,7 @@ require get_template_directory() . '/includes/jetpack.php';
 require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
 
 /**
- * Load larry's theme options.
+ * Load the page options.
  */
 require get_template_directory() . '/includes/admin/page-options.php';
 require get_template_directory() . '/includes/admin/customizer-options.php';
@@ -494,3 +492,6 @@ if ( class_exists( 'LifterLMS' ) ) {
 
 
 }
+
+
+

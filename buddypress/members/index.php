@@ -52,8 +52,8 @@ do_action( 'bp_before_directory_members_page' ); ?>
 			<ul>
 
 				<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
-						<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'larry' ), '<span>' . bp_get_total_member_count() . '</span>' ); ?></a></li>
-						<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends %s', 'larry' ), '<span>' . bp_get_total_friend_count( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
+						<li class="selected" id="members-all"><a href="<?php bp_members_directory_permalink(); ?>"><?php printf( __( 'All Members %s', 'buddypress' ), '<span>' . bp_get_total_member_count() . '</span>' ); ?></a></li>
+						<li id="members-personal"><a href="<?php echo bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/'; ?>"><?php printf( __( 'My Friends %s', 'buddypress' ), '<span>' . bp_get_total_friend_count( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 				<?php endif; ?>
 
 				<?php
@@ -81,13 +81,13 @@ do_action( 'bp_before_directory_members_page' ); ?>
 				<!-- Coming next is the member filter to order the member list -->
 				<!-- (if you want the order filter to show, just comment it back here -->
 				<!-- <li id="members-order-select" class="last filter">
-					<label for="members-order-by"><?php _e( 'Order By:', 'larry' ); ?></label>
+					<label for="members-order-by"><?php _e( 'Order By:', 'buddypress' ); ?></label>
 					<select id="members-order-by">
-						<option value="active"><?php _e( 'Last Active', 'larry' ); ?></option>
-						<option value="newest"><?php _e( 'Newest Registered', 'larry' ); ?></option>
+						<option value="active"><?php _e( 'Last Active', 'buddypress' ); ?></option>
+						<option value="newest"><?php _e( 'Newest Registered', 'buddypress' ); ?></option>
 
 						<?php if ( bp_is_active( 'xprofile' ) ) : ?>
-							<option value="alphabetical"><?php _e( 'Alphabetical', 'larry' ); ?></option>
+							<option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
 						<?php endif; ?>
 
 						<?php
