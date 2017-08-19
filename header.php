@@ -130,7 +130,7 @@
 
 							<?php } ?>
 
-							<?php if ( class_exists( 'WooCommerce' ) && is_user_logged_in() ) { ?>
+							<?php if ( class_exists( 'WooCommerce' ) ) { ?>
 
 								<?php global $woocommerce; ?>
 
