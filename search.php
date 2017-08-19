@@ -34,4 +34,6 @@ get_header(); ?>
 
 				<?php endif; // end of loop. ?>
 
+      </div>
+
 <?php get_footer(); ?>

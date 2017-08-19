@@ -2,11 +2,10 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package Marketplace-Pro
+ * @package larry
  */
 ?>
 
-	</div><!-- close .main-content-inner -->
 
 	<div class="sidebar col-xs-12 col-md-4">
 

@@ -171,9 +171,6 @@
 												'walker' 			=> new wp_bootstrap_navwalker()
 											)); ?>
 
-
-
-
 										<li><a href="<?php bp_loggedin_user_link(); ?>" class="lighter" title="">My Profile</a></li>
 
 										<li><a href="<?php bp_loggedin_user_link(); ?>settings" class="lighter" title="">Account Settings</a></li>
@@ -188,15 +185,6 @@
 							<?php } ?>
 
 						</ul>
-
-					<?php } ?>
-
-
-					<?php if ( !is_user_logged_in() ) { ?>
-
-						<!-- <div id="af-fb-nav">
-							<div class="new-fb-btn new-fb-4 new-fb-default-anim"><div class="new-fb-4-1"><div class="new-fb-4-1-1">Login with Facebook</div></div></div>
-						</div> -->
 
 					<?php } ?>
 

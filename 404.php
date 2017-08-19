@@ -30,4 +30,6 @@ get_header(); ?>
 
 				</section><!-- .content-padder -->
 
+      </div>
+
 <?php get_footer(); ?>

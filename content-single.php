@@ -77,8 +77,6 @@
 								} // end check for categories on this blog
 
 								printf(
-									$meta_text,
-									$category_list,
 									$tag_list,
 									get_permalink(),
 									the_title_attribute( 'echo=0' )

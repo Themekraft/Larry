@@ -25,7 +25,7 @@ get_header(); ?>
               } else {
       					get_template_part( 'content', 'page' );
       				}
-          // default 
+          // default
           } else {
             get_template_part( 'content', 'page' );
           }
@@ -38,5 +38,7 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; // end of the loop. ?>
+
+      </div>
 
 <?php get_footer(); ?>

@@ -48,13 +48,13 @@ function _tk_setup() {
 	register_nav_menus( array(
 		'primary'  => __( 'Top Nav - Large Screen', 'larry' ),
 		'slide-nav'  => __( 'Sliding Nav - Mobile', 'larry' ),
-		'bp-topnav'  => __( 'BuddyPress - Top Nav Profile Drop Down', 'larry' ),
-		'footer-nav'  => __( 'Footer Menu', 'larry' ),
+		'footer-nav'  => __( 'Footer Menu', 'larry' )
 	) );
 
 }
 endif; // _tk_setup
 add_action( 'after_setup_theme', '_tk_setup' );
+
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -388,19 +388,25 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 		}
 
+		// Redirect to Thank You page after payment successful
+		add_action( 'woocommerce_thankyou', function(){
+		    global $woocommerce;
+		    $order = new WC_Order();
+		       if ( $order->status != 'failed' ) {
+		        wp_redirect( home_url().'/thank-you' ); exit;
+		       }
+		});
+
+		// Change number or products per row to 3
+		add_filter('loop_shop_columns', 'loop_columns');
+		if (!function_exists('loop_columns')) {
+			function loop_columns() {
+				return 4; // 3 products per row
+			}
+		}
 
 }
 
-
-
-// Redirect to Thank You page after payment successful
-add_action( 'woocommerce_thankyou', function(){
-    global $woocommerce;
-    $order = new WC_Order();
-       if ( $order->status != 'failed' ) {
-        wp_redirect( home_url().'/thank-you' ); exit;
-       }
-});
 
 
 /**
@@ -408,6 +414,15 @@ add_action( 'woocommerce_thankyou', function(){
  ****************************************/
 
 if ( class_exists( 'BuddyPress' ) ) {
+
+	// Register Menu for BuddyPress Profile Drop Down Nav
+	function larry_bp_nav_setup() {
+		register_nav_menus( array(
+			'bp-topnav'  => __( 'BuddyPress - Top Nav Profile Drop Down', 'larry' )
+		) );
+
+	}
+	add_action( 'after_setup_theme', 'larry_bp_nav_setup' );
 
 	// Member profiles - change cropping size of cover image
 	function tk_cover_image( $settings = array() ) {

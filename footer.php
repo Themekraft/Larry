@@ -8,15 +8,10 @@
  */
 ?>
 
-<?php // if you have a front-page.php, then enable the following line and line 19
-			// if (!is_front_page()) { ?>
 
-			</div><!-- close .*-inner (main-content or sidebar, depending if sidebar is used) -->
-		</div><!-- close .row -->
-	</div><!-- close .container -->
-
-<?php // } ?>
-
+			</div><!-- close .row -->
+		</div><!-- close .container -->
+	</div>
 </div> <!-- close #mainwrap -->
 
 <?php do_action('after_main_content'); ?>

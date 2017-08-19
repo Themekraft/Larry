@@ -94,4 +94,6 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
+      </div>
+
 <?php get_footer(); ?>
