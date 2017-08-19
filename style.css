@@ -156,7 +156,7 @@ a:focus {
 	background: #f4f4f4;
 	color: inherit;
 }
-.sidebar .current-menu-item,
+.sidebar .current-menu-item a,
 .sidebar ul li.current-menu-item a:hover,
 .sidebar ul li.current-menu-item a:focus {
 	background: #f4f4f4;
