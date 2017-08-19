@@ -67,13 +67,30 @@ function larry_customizer( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-     new WP_Customize_Image_Control( $wp_customize, 'site_logo', array(
+     new WP_Customize_Image_Control( $wp_customize, 'larry_site_logo', array(
        'label'      	=> __( 'Site Logo', 'larry' ),
 			 'description'  => __( 'Upload your site logo. Used in top navigation.', 'larry' ),
        'section'    	=> 'title_tagline',
        'settings'   	=> 'larry_site_logo',
 			 'priority' 		=> 40
 	 ) ) );
+
+
+	 // Hide Site Title
+
+ 	$wp_customize->add_setting( 'larry_hide_site_title', array(
+ 		'capability' 				=> 'edit_theme_options',
+ 		'transport'         => 'refresh',
+ 	) );
+
+ 	$wp_customize->add_control( 'larry_hide_site_title', array(
+ 		'label'             => __('Hide the site title in top menu?', 'larry'),
+ 		'section'           => 'title_tagline',
+ 		'type'              => 'checkbox',
+ 		'priority'		      => 42
+ 	) );
+
+
 
 
 }

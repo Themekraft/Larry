@@ -90,12 +90,17 @@
 		<div class="row">
 			<div class="col-xs-12">
 
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="matribe home" rel="home">
-					<div id="topnav-logo">
-					</div>
-					<div id="topnav-title">
-						<?php bloginfo( 'name' ); ?>
-					</div>
+				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="home" rel="home">
+					<?php if ( get_theme_mod( 'larry_site_logo' ) ) : ?>
+					    <div id="topnav-logo">
+					        <img src='<?php echo esc_url( get_theme_mod( 'larry_site_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+					    </div>
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'larry_hide_site_title' ) != true ) : ?>
+						<div id="topnav-title">
+							<?php bloginfo( 'name' ); ?>
+						</div>
+					<?php endif; ?>
 				</a>
 
 				<div class="tk-menu-group">
