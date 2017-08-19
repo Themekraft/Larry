@@ -25,31 +25,13 @@ function _tk_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	*/
+	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	*/
+	// Enable support for post thumbnails on posts and pages
 	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Enable support for Post Formats
-	*/
-	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
-	/**
-	 * Setup the WordPress core custom background feature.
-	*/
-	// add_theme_support( 'custom-background', apply_filters( '_tk_custom_background_args', array(
-	// 	'default-color' => '',
-	// 	'default-image' => '',
-	// ) ) );
-
+	// Enable support for title-tag options
 	add_theme_support( 'title-tag' );
 
 	/**

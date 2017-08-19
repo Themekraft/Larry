@@ -19,7 +19,8 @@ function larry_customizer( $wp_customize ) {
 	$wp_customize->add_setting( 'larry_admin_bar', array(
 		'capability' 				=> 'edit_theme_options',
 		'default'           => 'default',
-		'transport'         => 'refresh'
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'sanitize_larry_admin_bar'
 	) );
 
 	$wp_customize->add_control( 'larry_admin_bar', array(
@@ -32,6 +33,12 @@ function larry_customizer( $wp_customize ) {
       'Hide'   => 'Show admin bar'
 		)
 	) );
+
+	// checkbox sanitization function
+	function sanitize_larry_admin_bar( $input ){
+			//returns true if checkbox is checked
+			return ( isset( $input ) ? true : false );
+	}
 
 
 	// Brand Color
@@ -55,7 +62,8 @@ function larry_customizer( $wp_customize ) {
 	// Brand Logo
 
 	$wp_customize->add_setting( 'larry_site_logo', array(
-		'transport'		=> 'refresh',
+		'transport'					=> 'refresh',
+		'sanitize_callback' => 'esc_url_raw'
 	) );
 
 	$wp_customize->add_control(
