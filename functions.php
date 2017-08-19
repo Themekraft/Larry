@@ -304,7 +304,11 @@ if ( class_exists( 'WooCommerce' ) ) {
     add_action('woocommerce_after_main_content', 'tk_theme_wrapper_end', 10);
 
     function tk_theme_wrapper_start() {
-      echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12 col-md-8">';
+			if ( is_product() ) {
+				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12">';				
+			} else {
+				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12 col-md-8">';
+			}
     }
 
     function tk_theme_wrapper_end() {

@@ -87,10 +87,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     </div>
 
-
-    <?php get_sidebar( 'product' ); ?>
-
+		<?php get_sidebar( 'product' ); ?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
+
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
