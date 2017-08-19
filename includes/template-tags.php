@@ -30,29 +30,29 @@ function _tk_content_nav( $nav_id ) {
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'larry' ); ?></h1>
-		<ul class="pager">
+		<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+			<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'larry' ); ?></h1>
+			<ul class="pager">
 
-		<?php if ( is_single() ) : // navigation links for single posts ?>
+			<?php if ( is_single() ) : // navigation links for single posts ?>
 
-			<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'larry' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'larry' ) . '</span>' ); ?>
+				<?php previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'larry' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<li class="nav-next next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'larry' ) . '</span>' ); ?>
 
-		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+			<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> More posts', 'larry' ) ); ?></li>
+				<?php if ( get_next_posts_link() ) : ?>
+				<li class="nav-previous previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> More posts', 'larry' ) ); ?></li>
+				<?php endif; ?>
+
+				<?php if ( get_previous_posts_link() ) : ?>
+				<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'larry' ) ); ?></li>
+				<?php endif; ?>
+
 			<?php endif; ?>
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'larry' ) ); ?></li>
-			<?php endif; ?>
-
-		<?php endif; ?>
-
-		</ul>
-	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+			</ul>
+		</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
 endif; // _tk_content_nav
@@ -68,8 +68,8 @@ function _tk_comment( $comment, $args, $depth ) {
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
-		<div class="comment-body">
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( '' ); ?>>
+		<div class="pingback">
 			<?php _e( 'Pingback:', 'larry' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'larry' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 

@@ -11,7 +11,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
 
-			<div id="content" class="main-content-inner col-xs-12 col-md-9 col-lg-8">
+			<div id="content" class="main-content-inner col-xs-12 col-md-8">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

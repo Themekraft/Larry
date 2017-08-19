@@ -146,9 +146,10 @@ a:focus {
 	display: inline-block;
 }
 .sidebar ul li a {
-  color: inherit;
-  margin-bottom: 5px;
+	color: inherit;
+  margin-bottom: 0;
   padding: 10px;
+  width: 100%;
 }
 .sidebar ul li a:hover,
 .sidebar ul li a:focus {
@@ -344,15 +345,23 @@ img[class*="wp-image-"] {
 .gallery {
 	margin-bottom: 1.5em;
 }
+@media (max-width: 550px) {
+	.gallery .gallery-item {
+	    float: none !important;
+	    width: 100% !important;
+	}
+}
 .gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
+	margin-bottom: 5px;
 }
 .gallery dd {
 	margin: 0;
 }
 .gallery-caption {
+	font-size: 13px;
 	display: block;
 }
 
@@ -430,6 +439,30 @@ object {
 }
 .clear {
 	clear: both;
+}
+.page-links {
+  padding: 10px;
+  text-align: center;
+}
+.page-links a {
+    padding: 4px 8px;
+    background: #3f3f3f;
+    color: #fff;
+}
+.page-links a:hover,
+.page-links a:focus {
+    padding: 4px 8px;
+    background: #555;
+    color: #fff;
+		text-decoration: none;
+}
+@media (max-width: 550px) {
+	.pager .next > a,
+	.pager .next > span {
+    float: left;
+    clear: both;
+    margin: 20px 0;
+	}
 }
 
 /* Navigation */
@@ -1154,6 +1187,7 @@ article.hentry.post,
     background: #fff;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+		overflow: auto;
 }
 .entry-content-thumbnail {
     width: 100%;
@@ -1263,6 +1297,8 @@ a .entry-content-thumbnail:hover {
 }
 .single-post .main-content .entry-content-thumbnail img {
 	margin-bottom: 10px;
+	width: 100%;
+  height: auto;
 }
 @media (min-width: 520px) {
 	.single-post .main-content .hentry {
@@ -1276,6 +1312,16 @@ a .entry-content-thumbnail:hover {
 /* Comments */
 #comments {
     margin: 50px 0;
+}
+#comments ol.comment-list {
+	margin: 20px 0;
+}
+#comments li.comment {
+    margin: 15px 0;
+}
+#comments li.pingback {
+	padding: 0 0 12px 0;
+	font-size: 13px;
 }
 #comments h5 cite {
   margin-right: 3px;
@@ -1303,7 +1349,6 @@ form.comment-form input#url {
 	padding: 12px;
 	margin: 5px 0;
 }
-
 
 /* Footer */
 #footer {

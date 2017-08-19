@@ -23,7 +23,7 @@ get_header(); ?>
 						<header>
 							<h1 class="page-title">
 								<?php
-									if ( is_category() ) :
+                  if  ( is_category() ) :
 										single_cat_title();
 
 									elseif ( is_tag() ) :
