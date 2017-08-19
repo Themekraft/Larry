@@ -7,9 +7,9 @@ function larry_customizer( $wp_customize ) {
 	$wp_customize->add_section(
 		'larry_theme_options',
 		array(
-			'title' => 'Larry Theme Options',
+			'title' => 'Extras',
 			'description' => '',
-			'priority' => 35,
+			'priority' => 180,
 		)
 	);
 
