@@ -55,7 +55,6 @@
 				<footer class="entry-meta">
 
 					<small class="tag-links">
-						<i class="fa fa-tags" style="margin-right: 4px;"></i>
 							<?php
 
 								/* translators: used between list items, there is a space after the comma */
@@ -64,15 +63,13 @@
 								if ( ! _tk_categorized_blog() ) {
 									// This blog only has 1 category so we just need to worry about tags in the meta text
 									if ( '' != $tag_list ) {
-										$meta_text = __( 'This post was tagged %2$s.', '_tk' );
-									} else {
-										// $meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', '_tk' );
+										$meta_text = __( '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s.', '_tk' );
 									}
 
 								} else {
 									// But this blog has loads of categories so we should probably display them here
 									if ( '' != $tag_list ) {
-										$meta_text = __( 'Tagged %2$s. ', '_tk' );
+										$meta_text = __( '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s. ', '_tk' );
 									} else {
 										// $meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', '_tk' );
 									}
