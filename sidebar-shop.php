@@ -1,14 +1,14 @@
 <?php
 /**
- * The sidebar for the WooCommerce product single view
+ * The sidebar for the WooCommerce archive view
  *
  * @package larry
  */
 ?>
 
+  </div><!-- close .main-content-inner -->
 
-
-	<div class="sidebar col-xs-12 col-md-4">
+	<div class="sidebar sidebar-shop col-xs-12 col-md-4">
 
 		<div class="sidebar-padder">
 
@@ -24,5 +24,3 @@
       <?php do_action( 'tk_single_product_sidebar_last' ); ?>
 
 		</div><!-- close .sidebar-padder -->
-
-	</div>

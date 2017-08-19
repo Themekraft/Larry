@@ -8,7 +8,7 @@
 
 	</div><!-- close .main-content-inner -->
 
-	<div class="sidebar col-xs-12 col-md-4 col-lg-4">
+	<div class="sidebar col-xs-12 col-md-4">
 
 		<div class="sidebar-padder">
 
