@@ -139,6 +139,9 @@ function _tk_scripts() {
   // Import the necessary TK Bootstrap WP CSS additions
 	wp_enqueue_style( '_tk-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
+	// load font awesome icons
+	wp_enqueue_style( 'tk-font-awesome', get_template_directory_uri() . '/includes/resources/font-awesome/css/font-awesome.min.css' );
+
 	// load the tk styles
 	wp_enqueue_style( 'tk-style', get_stylesheet_uri() );
 
@@ -487,7 +490,7 @@ if ( class_exists( 'LifterLMS' ) ) {
 }
 
 
-// handy color adjust function
+// cool color adjust function
 function adjustBrightness($hex, $steps) {
     // Steps should be between -255 and 255. Negative = darker, positive = lighter
     $steps = max(-255, min(255, $steps));
