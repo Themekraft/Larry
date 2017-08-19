@@ -6,6 +6,11 @@
 
  ?><style>
 
-/* Some Cool CSS */
+/* Show Admin Bar */
+
+
+/* Link Color */
+
+
 
 </style><?php
