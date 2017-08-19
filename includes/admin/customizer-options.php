@@ -18,9 +18,7 @@ function larry_customizer( $wp_customize ) {
 
 	$wp_customize->add_setting( 'larry_admin_bar', array(
 		'capability' 				=> 'edit_theme_options',
-		'default'           => 'default',
 		'transport'         => 'refresh',
-		'sanitize_callback' => 'sanitize_larry_admin_bar'
 	) );
 
 	$wp_customize->add_control( 'larry_admin_bar', array(
@@ -28,17 +26,9 @@ function larry_customizer( $wp_customize ) {
 		'description'       => __('Show WordPress admin bar in front end when logged in? Hidden by default.', 'larry'),
 		'section'           => 'extras',
 		'type'              => 'checkbox',
-		'priority'		      => 14,
-		'choices'           => array(
-      'Hide'   => 'Show admin bar'
-		)
+		'priority'		      => 14
 	) );
 
-	// checkbox sanitization function
-	function sanitize_larry_admin_bar( $input ){
-			//returns true if checkbox is checked
-			return ( isset( $input ) ? true : false );
-	}
 
 
 	// Brand Color
