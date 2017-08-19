@@ -5,82 +5,67 @@
 function larry_customizer( $wp_customize ) {
 
 	$wp_customize->add_section(
-		'larry_theme_options',
+		'extras',
 		array(
-			'title' => 'Extras',
+			'title' => __('Extras', 'larry'),
 			'description' => '',
-			'priority' => 180,
+			'priority' => 180
 		)
 	);
 
 
-	// $wp_customize->add_setting( 'larry_show_admin_bar', array(
-	//   'capability' => 'edit_theme_options',
-	//   'sanitize_callback' => 'larry_sanitize_checkbox',
-	// ) );
-	//
-	// $wp_customize->add_control( 'larry_show_admin_bar', array(
-	//   'type' => 'checkbox',
-	//   'section' => 'larry_section_one', // Add a default or your own section
-	//   'label' => __( 'WP Admin Bar' ),
-	//   'description' => __( 'Show WP Admin bar in front end?' ),
-	// ) );
-
+	// Admin Bar
 
 	$wp_customize->add_setting( 'larry_admin_bar', array(
 		'capability' 				=> 'edit_theme_options',
 		'default'           => 'default',
-		'transport'         => 'refresh',
+		'transport'         => 'refresh'
 	) );
 
 	$wp_customize->add_control( 'larry_admin_bar', array(
-		'label'             => 'Show WP Admin Bar?',
-		'description'       => 'Show WordPress admin bar in front end when logged in? Hidden by default.',
-		'section'           => 'larry_theme_options',
+		'label'             => __('Show WP Admin Bar?', 'larry'),
+		'description'       => __('Show WordPress admin bar in front end when logged in? Hidden by default.', 'larry'),
+		'section'           => 'extras',
 		'type'              => 'checkbox',
 		'priority'		      => 14,
 		'choices'           => array(
-      'Hide'     => 'Show admin bar',
-		),
+      'Hide'   => 'Show admin bar'
+		)
 	) );
 
 
-	// Text Box
-	$wp_customize->add_setting(
-		'konrad_textbox',
-		array(
-			'default' => 'Hallo Konrad',
-		)
-	);
+	// Brand Color
 
-	$wp_customize->add_control(
-		'konrad_textbox',
-		array(
-			'label' => 'Hallo Konrad',
-			'section' => 'larry_section_one',
-			'type' => 'text',
-		)
-	);
-
-
-
-	// Colors
-
-	$wp_customize->add_setting( 'larry_branding_color', array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default'           => 'default',
-		'transport'         => 'refresh',
+	$wp_customize->add_setting( 'larry_brand_color', array(
+	 'sanitize_callback' => 'sanitize_hex_color',
+	 'default'           => 'default',
+	 'transport'         => 'refresh',
+	 'default'						=> '#09b1cc'
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'larry_branding_color', array(
-		'label'    => 'Branding Color',
-		'section'  => 'colors',
-		'settings' => 'larry_branding_color',
-		'priority' => 14,
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'larry_brand_color', array(
+	 'label'    => __('Brand Color', 'larry'),
+	 'description' => __('Used for all your links. ', 'larry'),
+	 'section'  => 'colors',
+	 'settings' => 'larry_brand_color',
+	 'priority' => 20
 	) ) );
 
 
+	// Brand Logo
 
+	$wp_customize->add_setting( 'larry_brand_logo', array(
+		'transport'		=> 'refresh',
+	) );
+
+	$wp_customize->add_control(
+     new WP_Customize_Image_Control( $wp_customize, 'larry_brand_logo', array(
+       'label'      	=> __( 'Brand Logo', 'larry' ),
+			 'description'  => __( 'Upload your brand logo. Used in top navigation.', 'larry' ),
+       'section'    	=> 'title_tagline',
+       'settings'   	=> 'larry_brand_logo',
+			 'priority' 		=> 40
+	 ) ) );
 
 
 }
