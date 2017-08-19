@@ -7,22 +7,24 @@
 ?>
 
 
+			<div class="sidebar col-xs-12 col-md-4">
 
-	<div class="sidebar col-xs-12 col-md-4">
+				<div class="sidebar-padder">
 
-		<div class="sidebar-padder">
+					<?php do_action( 'before_sidebar' ); ?>
 
-			<?php do_action( 'before_sidebar' ); ?>
+					<?php do_action( 'tk_single_product_sidebar_first' ); ?>
 
-			<?php do_action( 'tk_single_product_sidebar_first' ); ?>
+					<?php if ( ! dynamic_sidebar( 'sidebar-product' ) ) : ?>
+						<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+						<?php endif; ?>
+					<?php endif; ?>
 
-			<?php if ( ! dynamic_sidebar( 'sidebar-product' ) ) : ?>
-				<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-				<?php endif; ?>
-			<?php endif; ?>
+		      <?php do_action( 'tk_single_product_sidebar_last' ); ?>
 
-      <?php do_action( 'tk_single_product_sidebar_last' ); ?>
+				</div><!-- close .sidebar-padder -->
 
-		</div><!-- close .sidebar-padder -->
-
+			</div>
+			
+		</div>
 	</div>

@@ -305,7 +305,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
     function tk_theme_wrapper_start() {
 			if ( is_product() ) {
-				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12">';				
+				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12">';
 			} else {
 				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12 col-md-8">';
 			}

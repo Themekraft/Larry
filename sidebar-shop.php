@@ -6,6 +6,7 @@
  */
 ?>
 
+	</div><!-- close shop loop wrap -->
 
 	<div class="sidebar sidebar-shop col-xs-12 col-md-4">
 
@@ -23,3 +24,5 @@
       <?php do_action( 'tk_single_product_sidebar_last' ); ?>
 
 		</div><!-- close .sidebar-padder -->
+
+	</div>

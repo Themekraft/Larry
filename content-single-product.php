@@ -87,6 +87,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     </div>
 
+			<?php
+				/**
+				 * woocommerce_sidebar hook.
+				 *
+				 * @hooked woocommerce_get_sidebar - 10
+				 */
+				//do_action( 'woocommerce_sidebar' );
+			?>
+
+
 		<?php get_sidebar( 'product' ); ?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
