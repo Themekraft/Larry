@@ -19,6 +19,12 @@ function tk_page_options_meta_box() {
           Hide the title?
       </label>
     </p>
+    <br>
+    <h3>Featured Image Page Template</h3>
+    <p>
+      <label for="larry-page-template-featured-image-max-height">Max height for featured image</label>
+        <input name="larry-page-template-featured-image-max-height" type="text" value="<?php echo get_post_meta( $post->ID, "larry-page-template-featured-image-max-height", true); ?>">px &nbsp;
+    </p>
     </div>
     <?php
 }
@@ -40,7 +46,9 @@ function tk_page_options_save_meta_box( $post_id, $post, $update ) {
          return;
 
     $meta_box_checkbox_value = isset($_POST["tk-hide-page-title"]) ? $_POST["tk-hide-page-title"] : "";
+    $meta_box_featured_image_height = isset($_POST["larry-page-template-featured-image-max-height"]) ? $_POST["larry-page-template-featured-image-max-height"] : "";
 
     update_post_meta($post_id, "tk-hide-page-title", $meta_box_checkbox_value);
+    update_post_meta($post_id, "larry-page-template-featured-image-max-height", $meta_box_featured_image_height);
 }
 ?>

@@ -213,6 +213,18 @@ function larry_add_customizer_CSS() {
     <?php endif; ?>
 
 
+    <?php // Max Height Featured Image ?>
+    <?php $max_height_featured_image = get_post_meta( get_the_ID(), "larry-page-template-featured-image-max-height", true ); ?>
+
+    <?php if( $max_height_featured_image != "" ) { ?>
+
+      #featured-image-wrap {
+          max-height: <?php echo $max_height_featured_image; ?>px;
+          overflow: hidden;
+      }
+
+  	<?php } ?>
+
 
   </style><?php
 

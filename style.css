@@ -1289,6 +1289,35 @@ form.comment-form input#url {
 	margin: 5px 0;
 }
 
+
+
+/* Single Page */
+
+.page-title-header-featured-image {
+	position: absolute;
+	top: 150px;
+	left: 0;
+	padding: 10px 40px;
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	margin: 0 auto;
+}
+.page-title-featured-image {
+	color: #fff;
+	text-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+	margin: 0;
+	padding: 0;
+	line-height: 1.8;
+}
+.page-template-page-featured-image article.page {
+	margin-top: 30px;
+}
+
+
+
+
+
+
 /* Footer */
 #footer {
 	height: auto;
