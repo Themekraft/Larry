@@ -8,29 +8,6 @@ function larry_add_customizer_CSS() {
 
  ?><style>
 
-    /* Show Admin Bar */
-    <?php if ( get_theme_mod( 'larry_admin_bar' ) == true ): ?>
-      /*html, #topnav {
-        margin-top: 46px;
-      }
-      @media (max-width: 991px) {
-        #topnav .tk-extra-nav {
-          top: 46px;
-        }
-      }
-      @media (min-width: 782px) {
-        html, #topnav {
-          margin-top: 32px;
-        }
-        @media (max-width: 991px) {
-          #topnav .tk-extra-nav {
-            top: 32px;
-          }
-        }
-      }*/
-    <?php endif; ?>
-
-
     /* Link Color */
     <?php if ( get_theme_mod( 'larry_link_color' ) ): ?>
       a,
@@ -104,6 +81,31 @@ function larry_add_customizer_CSS() {
 
     <?php endif; ?>
 
+
+
+
+
+
+    /* WooCommerce Options */
+
+    /* Cart icon in top menu */
+    <?php if ( get_theme_mod( 'larry_wc_show_top_nav_cart' ) == 'never' ): ?>
+
+      .woocommerce ul.products li.product .button {
+          display: none;
+      }
+
+    <?php endif; ?>
+
+
+    /* Hide add to cart buttons in loop */
+    <?php if ( get_theme_mod( 'larry_wc_loop_hide_cart_buttons' ) == true ): ?>
+
+      .woocommerce ul.products li.product .button {
+          display: none;
+      }
+
+    <?php endif; ?>
 
 
 

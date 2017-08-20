@@ -87,6 +87,7 @@ function larry_customizer( $wp_customize ) {
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
+
 		$wp_customize->add_section(
 			'larry_wc',
 			array(
@@ -96,17 +97,58 @@ function larry_customizer( $wp_customize ) {
 			)
 		);
 
-		$wp_customize->add_setting( 'example-control', array() );
 
-		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'example-control', array(
+
+		// Description for the WooCommerce Tab
+
+		$wp_customize->add_setting( 'larry_wc_start', array() );
+
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_start', array(
 			'section' 	=> 'larry_wc',
 			'priority' 	=> 10,
-			'label' 		=> __( 'Example Control', 'larry' ),
-			'content' 	=> __( 'Content to output. Use <a href="#">HTML</a> if you like.', 'larry' ) . '</p>',
-			// 'description' => __( 'Optional: Example Description.', 'textdomain' ),
+			// 'label' 		=> __( 'WooCommerce Theme Options', 'larry' ),
+			// 'content' 	=> __( 'Some quick theme options for your WooCommerce design.', 'larry' ) . '</p>',
 		) ) );
 
-		// Admin Bar
+
+
+		// Show cart in top menu?
+
+		$wp_customize->add_setting( 'larry_wc_show_top_nav_cart', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default'  		 			=> 'always',
+		) );
+
+		$wp_customize->add_control( 'larry_wc_show_top_nav_cart', array(
+			'label'             => __('Show cart icon in top menu', 'larry'),
+			'description'       => __('When to show the cart icon?', 'larry'),
+			'section'           => 'larry_wc',
+			'priority'		      => 20,
+			'type'        			=> 'radio',
+			'choices'     			=> array(
+						'always'   => __('Show always', 'larry'),
+						'notempty'   => __('Only when items added to cart', 'larry'),
+						'never'   => __('Show never', 'larry')
+					)
+		) );
+
+
+
+		// Product Archives - Section Title
+
+		$wp_customize->add_setting( 'larry_wc_archives', array() );
+
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_archives', array(
+			'section' 	=> 'larry_wc',
+			'priority' 	=> 30,
+			'label' 		=> __( 'Product Archives', 'larry' ),
+			'description' 	=> __( 'Options for your shop homepage, and your shop\'s category and tags pages.', 'larry' )
+		) ) );
+
+
+
+		// Hide cart buttons in loop
 
 		$wp_customize->add_setting( 'larry_wc_loop_hide_cart_buttons', array(
 			'capability' 				=> 'edit_theme_options',
@@ -114,12 +156,16 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_cart_buttons', array(
-			'label'             => __('Hide add-to-cart buttons in category views?', 'larry'),
-			// 'description'       => __('Show WordPress admin bar in front end when logged in? Hidden by default.', 'larry'),
+			'label'             => __('Hide add-to-cart buttons in shop loop?', 'larry'),
+			// 'description'       => __('Hide add-to-cart buttons in category views?', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
-			'priority'		      => 14
+			'priority'		      => 40
 		) );
+
+
+
+
 
 	}
 
