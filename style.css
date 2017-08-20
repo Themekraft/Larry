@@ -1302,7 +1302,7 @@ form.comment-form input#url {
 	font-weight: normal;
 }
 #footer-full-width {
-	padding: 0 0 60px;	
+	padding: 0 0 60px;
 }
 #footer .footer-columns {
 	margin-bottom: 0;
@@ -3117,6 +3117,22 @@ ul.wcv_vendorslist div {
 
 
 
+/* LifterLMS */
+
+.llms-loop-item-content .llms-loop-title,
+.llms-loop-item-content .llms-loop-title:hover {
+    color: #3f3f3f;
+}
+.llms-loop-item-content .llms-loop-link {
+	color: #3f3f3f;
+}
+.llms-loop-item-content .llms-loop-link:hover,
+.llms-loop-item-content .llms-loop-link:focus {
+	text-decoration: none;
+}
+.single-lesson nav#nav-below {
+	display: none;
+}
 
 
 
