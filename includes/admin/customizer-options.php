@@ -188,6 +188,39 @@ function larry_customizer( $wp_customize ) {
 	) );
 
 
+	// Blog Thumbnails
+
+	$wp_customize->add_setting( 'larry_blog_thumbnail_desc', array() );
+
+	$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_blog_thumbnail_desc', array(
+		'section' 	=> 'larry_blog',
+		'priority' 	=> 40,
+		'label' 		=> __( 'Post Thumbnails', 'larry' ),
+		// 'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
+	) ) );
+
+
+	// Leave blog thumbnails in natural height?
+
+	$wp_customize->add_setting( 'larry_blog_thumbnail_height', array(
+		'capability' 				=> 'edit_theme_options',
+		'transport'         => 'refresh',
+		'default'  		 			=> 'fixed',
+	) );
+
+	$wp_customize->add_control( 'larry_blog_thumbnail_height', array(
+		'label'             => __('Blog thumbnails', 'larry'),
+		'description'       => __('Fixed height or natural?', 'larry'),
+		'section'           => 'larry_blog',
+		'priority'		      => 50,
+		'type'        			=> 'radio',
+		'choices'     			=> array(
+				'fixed'  	=> __('Crop all thumbnails to same ratio.', 'larry'),
+				'natural'   	=> __('Leave all thumbnails in natural ratio. Each entry might have a different height.', 'larry'),
+			)
+	) );
+
+
 	// WooCommerce Options
 
 	if ( class_exists( 'WooCommerce' ) ) {

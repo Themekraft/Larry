@@ -7,15 +7,17 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="row">
-		<?php if ( has_post_thumbnail() ) : ?>
+		<?php if ( has_post_thumbnail() ) { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark" title="Read more">
-					<div class="entry-content-thumbnail entry-content-thumbnail-grid hidden-xs" style="background: #000 url('<?php the_post_thumbnail_url(); ?>') 0 0 scroll no-repeat; background-size: cover;">
-					</div>
-					<div class="entry-content-thumbnail hidden-sm hidden-md hidden-lg">
+					<?php if ( get_theme_mod( 'larry_blog_thumbnail_height' ) == fixed ) { ?>
+						<div class="entry-content-thumbnail entry-content-thumbnail-grid hidden-xs" style="background: #000 url('<?php the_post_thumbnail_url(); ?>') 0 0 scroll no-repeat; background-size: cover;">
+						</div>
+					<?php } ?>
+					<div class="entry-content-thumbnail <?php if ( get_theme_mod( 'larry_blog_thumbnail_height' ) == fixed ) { ?>hidden-sm hidden-md hidden-lg<?php } ?>">
 						<a href="<?php the_permalink(); ?>" rel="bookmark" title="Read more"><?php the_post_thumbnail(); ?></a>
 					</div>
 				</a>
-		<?php endif; ?>
+		<?php } ?>
 
 		<div class="entry-content-wrap col-xs-12">
 
