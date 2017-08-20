@@ -180,6 +180,51 @@ function larry_customizer( $wp_customize ) {
 
 
 
+		// Single Products - Section Title
+
+		$wp_customize->add_setting( 'larry_wc_single_product', array() );
+
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_single_product', array(
+			'section' 	=> 'larry_wc',
+			'priority' 	=> 50,
+			'label' 		=> __( 'Single Products', 'larry' ),
+			'description' 	=> __( 'Options for your single product view.', 'larry' )
+		) ) );
+
+
+
+		// Hide breadcrumbs
+
+		$wp_customize->add_setting( 'larry_wc_hide_breadcrumbs', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default' 					=> false
+		) );
+
+		$wp_customize->add_control( 'larry_wc_hide_breadcrumbs', array(
+			'label'             => __('Hide breadcrumbs in single product?', 'larry'),
+			'section'           => 'larry_wc',
+			'type'              => 'checkbox',
+			'priority'		      => 60
+		) );
+
+
+		// Hide product meta in summary
+
+		$wp_customize->add_setting( 'larry_wc_hide_meta_summary', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default' 					=> false
+		) );
+
+		$wp_customize->add_control( 'larry_wc_hide_meta_summary', array(
+			'label'             => __('Hide extra data in product summary?', 'larry'),
+			'description'       => __('Stuff like categories, tags, SKU... if you like it simple and clean just remove the lot.', 'larry'),
+			'section'           => 'larry_wc',
+			'type'              => 'checkbox',
+			'priority'		      => 70
+		) );
+
 
 
 	}

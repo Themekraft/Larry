@@ -107,6 +107,20 @@ function larry_add_customizer_CSS() {
 
     <?php endif; ?>
 
+    /* Hide Breadcrumbs */
+    <?php if ( get_theme_mod( 'larry_wc_hide_breadcrumbs' ) == true ): ?>
+      .woocommerce .woocommerce-breadcrumb {
+        display: none;
+      }
+    <?php endif; ?>
+
+    /* Hide Product Meta */
+    <?php if ( get_theme_mod( 'larry_wc_hide_meta_summary' ) == true ): ?>
+      .single-product .summary .product_meta {
+          display: none;
+      }
+    <?php endif; ?>
+
 
 
   </style><?php
