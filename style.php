@@ -10,7 +10,7 @@ function larry_add_customizer_CSS() {
 
     /* Show Admin Bar */
     <?php if ( get_theme_mod( 'larry_admin_bar' ) == true ): ?>
-      html, #topnav {
+      /*html, #topnav {
         margin-top: 46px;
       }
       @media (max-width: 991px) {
@@ -27,7 +27,7 @@ function larry_add_customizer_CSS() {
             top: 32px;
           }
         }
-      }
+      }*/
     <?php endif; ?>
 
 

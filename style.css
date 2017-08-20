@@ -618,8 +618,8 @@ display: block;
 	position: fixed;
 	z-index: 99999;
   float: none;
-  top: 0;
-  right: 0;
+  /*top: 0;
+  right: 0;*/
 	overflow: visible;
 	-webkit-transition: -webkit-transform .25s ease-out;
 	transition: transform .25s ease-out;

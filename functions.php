@@ -253,12 +253,12 @@ function add_body_class_names( $classes ) {
 
 
 // Removing the default WP admin bar in the front end
-function hide_admin_bar() {
-	if ( get_theme_mod( 'larry_admin_bar' ) != true ) :
-		add_filter('show_admin_bar', '__return_false');
-	endif;
-}
-add_action( 'admin_bar_init', 'hide_admin_bar' );
+// function hide_admin_bar() {
+// 	if ( get_theme_mod( 'larry_admin_bar' ) != true ) :
+// 		add_filter('show_admin_bar', '__return_false');
+// 	endif;
+// }
+// add_action( 'admin_bar_init', 'hide_admin_bar' );
 
 
 
@@ -347,7 +347,7 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
 
 		// Add category name to product loop item
-		add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
+		// add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
 		function tk_add_cat_to_loop() {
 			global $woocommerce, $product, $post;
 			$categ = $product->get_categories();
@@ -357,49 +357,49 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 		// Check if has purchase history
-		function tk_has_purchase_history() {
-
-			if ( ! class_exists( 'WooCommerce' ) ) {
-
-				return;
-
-			} else {
-
-		    $count = 0;
-		    $bought = false;
-
-		    // Get all customer orders
-		    $customer_orders = get_posts( array(
-		        'numberposts' => -1,
-		        'meta_key'    => '_customer_user',
-		        'meta_value'  => get_current_user_id(),
-		        'post_type'   => 'shop_order', // WC orders post type
-		        'post_status' => 'wc-completed' // Only orders with status "completed"
-		    ) );
-
-		    // Going through each current customer orders
-		    foreach ( $customer_orders as $customer_order ) {
-		        $count++;
-		    }
-
-		    // return "true" when customer has already one order
-		    if ( $count > 0 ) {
-		        $bought = true;
-		    }
-		    return $bought;
-
-			}
-
-		}
+		// function tk_has_purchase_history() {
+		//
+		// 	if ( ! class_exists( 'WooCommerce' ) ) {
+		//
+		// 		return;
+		//
+		// 	} else {
+		//
+		//     $count = 0;
+		//     $bought = false;
+		//
+		//     // Get all customer orders
+		//     $customer_orders = get_posts( array(
+		//         'numberposts' => -1,
+		//         'meta_key'    => '_customer_user',
+		//         'meta_value'  => get_current_user_id(),
+		//         'post_type'   => 'shop_order', // WC orders post type
+		//         'post_status' => 'wc-completed' // Only orders with status "completed"
+		//     ) );
+		//
+		//     // Going through each current customer orders
+		//     foreach ( $customer_orders as $customer_order ) {
+		//         $count++;
+		//     }
+		//
+		//     // return "true" when customer has already one order
+		//     if ( $count > 0 ) {
+		//         $bought = true;
+		//     }
+		//     return $bought;
+		//
+		// 	}
+		//
+		// }
 
 		// Redirect to Thank You page after payment successful
-		add_action( 'woocommerce_thankyou', function(){
-		    global $woocommerce;
-		    $order = new WC_Order();
-		       if ( $order->status != 'failed' ) {
-		        wp_redirect( home_url().'/thank-you' ); exit;
-		       }
-		});
+		// add_action( 'woocommerce_thankyou', function(){
+		//     global $woocommerce;
+		//     $order = new WC_Order();
+		//        if ( $order->status != 'failed' ) {
+		//         wp_redirect( home_url().'/thank-you' ); exit;
+		//        }
+		// });
 
 		// Change number or products per row to 3
 		add_filter('loop_shop_columns', 'loop_columns');
