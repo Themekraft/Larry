@@ -35,7 +35,7 @@
 
 				<?php if ( bp_is_my_profile() && $bp->current_component != 'profile' && $bp->current_action != 'public' ) { ?>
 
-					<div id="af-welcome-card-main" class="af-home-welcome-card well well-alt">
+					<div id="af-welcome-card-main" class="af-home-welcome-card">
 						<div class="af-dashboard-avatar">
 							<a href="<?php bp_displayed_user_link(); ?>" title="View my Profile">
 								<?php bp_loggedin_user_avatar( 'type=full' ); ?>

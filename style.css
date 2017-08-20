@@ -1941,6 +1941,11 @@ img.avatar {
     margin: 0 0 0 4px;
 }
 
+/* BP Tables */
+#buddypress table.forum thead tr, #buddypress table.messages-notices thead tr, #buddypress table.notifications thead tr, #buddypress table.notifications-settings thead tr, #buddypress table.profile-fields thead tr, #buddypress table.profile-settings thead tr, #buddypress table.wp-profile-fields thead tr {
+    background: transparent;
+}
+
 
 /* BuddyPress Activity Stream */
 #buddypress form#whats-new-form {
@@ -2108,11 +2113,8 @@ img.avatar {
 }
 
 #af-welcome-card-main {
-	/*display: none;*/
-	/*padding: 5px;*/
-	/*border: 1px solid #ddd;
-	background: #fff;*/
-	margin-bottom: 20px;
+	margin-bottom: 0;
+	overflow: hidden;
 }
 .front-page #af-welcome-card-main {
 	display: block;
@@ -2198,9 +2200,6 @@ body.buddypress.bp-default-cover div#item-header, .bp-default-cover #buddypress 
 	    right: 30px;
 	}
 }
-/*.bp-user.xprofile.public #subnav {
-    display: none;
-}*/
 .bp-user.xprofile.public.my-account #subnav,
 .bp-user.xprofile.my-account {
 	display: block;
@@ -2433,6 +2432,16 @@ p.field-visibility-settings-toggle,
   width: 180px;
   font-size: 12px;
   color: #666;
+}
+
+
+/* BP Messages */
+#buddypress table#message-threads {
+    margin-bottom: 10px;
+}
+#buddypress table#message-threads td.thread-from {
+    font-size: 13px;
+    max-width: 120px;
 }
 
 /* Account Settings & Notifications */
@@ -3158,9 +3167,6 @@ ul.wcv_vendorslist div {
   #af-home-sidebar #profile-sidebar {
       display: block;
   }
-}
-.af-home-welcome-card {
-  margin-bottom: 20px;
 }
 .af-dashboard-avatar {
   display: inline-block;
