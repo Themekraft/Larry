@@ -633,14 +633,14 @@ display: block;
 	float: right;
 }
 #topnav li a {
-	padding: 27px 17px;
+	padding: 28px 17px;
 	line-height: 1;
 	height: 57px;
 	font-weight: normal;
 	text-transform: none;
 	color: inherit;
 	background: transparent;
-	font-size: 14px;
+	font-size: 13px;
 }
 #topnav li a:hover,
 #topnav li a:focus {
@@ -710,8 +710,8 @@ display: block;
 		height: 72px;
 	}
 	#topnav-title {
-		line-height: 72px;
-		font-size: 21px;
+		line-height: 66px;
+		font-size: 19px;
 	}
 	#topnav #main-menu,
 	.tk-extra-nav .tk-profile {
@@ -1531,10 +1531,15 @@ form.comment-form input#url {
     text-transform: inherit;
 }
 .woocommerce ul.products li.product .price {
-    /*color: #f14747;*/
+    color: #f14747;
     font-weight: 300;
     margin-bottom: 0px;
     font-size: 15px;
+}
+.woocommerce ul.products li.product .price ins {
+    color: #f14747;
+    font-weight: 300;
+		text-decoration: none;
 }
 .woocommerce ul.products li.product .price del {
 	color: #999;
@@ -1550,11 +1555,14 @@ form.comment-form input#url {
 .woocommerce ul.products li.product a .onsale {
     opacity: 1;
     z-index: 999;
-    /*background: #f14747;*/
     width: 50px;
     height: 50px;
     padding-top: 1px;
 }
+.woocommerce span.onsale {
+    background: #f14747;
+}
+
 
 @media (max-width: 768px) {
 	.woocommerce ul.products li.product,
@@ -1621,7 +1629,7 @@ form.comment-form input#url {
 .woocommerce .button.wc-forward:focus,
 .woocommerce #respond input#submit.alt:focus {
 	border-radius: 0;
-	background: #e43a3a;
+	background: #ff5b5b;
 	border: 1px solid rgba(0,0,0,0.15);
 	font-weight: normal;
 	color: #fff;
@@ -1639,7 +1647,7 @@ form.comment-form input#url {
 }
 .woocommerce div.product p.price,
 .woocommerce div.product span.price {
-    color: #f14747;
+    color: #3f3f3f;
 		font-size: 23px;
 		margin-bottom: 20px;
 }

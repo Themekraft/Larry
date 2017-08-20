@@ -90,11 +90,12 @@
 						)); ?>
 
 
+					<!-- Add your social media links here - with Font Awesome icons! See all icons in the "brand icons" section here http://fontawesome.io/icons/ -->
 					<ul class="social navbar-nav nav">
-						<!-- Add social nav easily here with Font Awesome icons! -->
-						<li><a href="#" target="_new" title="Your Brand on GitHub" alt="ThemeKraft on GitHub"><i class="fa fa-github"></i></a></li>
-						<li><a href="#" target="_new" title="Your Brand on Twitter" alt="Your Brand on Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" target="_new" title="Your Brand on Facebook" alt="Your Brand on Instagram"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#" target="_new" title="Your Brand on Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" target="_new" title="Your Brand on Reddit"><i class="fa fa-behance"></i></a></li>
+						<li><a href="#" target="_new" title="Your Brand on Spotify"><i class="fa fa-spotify"></i></a></li>
+						<li><a href="#" target="_new" title="Your Brand on Spotify"><i class="fa fa-soundcloud"></i></a></li>
 					</ul>
 
 				</div>
