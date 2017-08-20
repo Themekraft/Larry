@@ -123,7 +123,10 @@ function larry_add_customizer_CSS() {
       #topnav ul li a:hover,
       #topnav ul li a:focus,
       #topnav .tk-extra-nav li a:hover,
-      #topnav .tk-extra-nav li a:focus {
+      #topnav .tk-extra-nav li a:focus,
+      #topnav li.active a,
+      #topnav li.active a:hover,
+      #topnav li.active a:focus {
           color: #dfdfdf;
           background: #2f2f2f;
       }
