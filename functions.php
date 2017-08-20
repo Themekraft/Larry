@@ -252,25 +252,19 @@ function add_body_class_names( $classes ) {
 
 
 
-// Removing the default WP admin bar in the front end
-// function hide_admin_bar() {
-// 	if ( get_theme_mod( 'larry_admin_bar' ) != true ) :
-// 		add_filter('show_admin_bar', '__return_false');
-// 	endif;
-// }
-// add_action( 'admin_bar_init', 'hide_admin_bar' );
-
-
-
 // Add Google Fonts
 add_action('wp_enqueue_scripts', 'oa_add_google_fonts', 0 );
 function oa_add_google_fonts() {
+
+		if ( get_theme_mod( 'larry_disable_google_fonts' ) != true ) :
 
         wp_register_style( 'oa-google-fonts-source-sans-pro', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600' );
         wp_enqueue_style( 'oa-google-fonts-source-sans-pro' );
 
         wp_register_style( 'oa-google-fonts-oswald', 'https://fonts.googleapis.com/css?family=Oswald' );
         wp_enqueue_style( 'oa-google-fonts-oswald' );
+
+		endif;
 
 }
 

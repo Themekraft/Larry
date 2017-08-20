@@ -14,16 +14,16 @@ function larry_customizer( $wp_customize ) {
 	);
 
 
-	// Admin Bar
+	// Disable Google Fonts
 
-	$wp_customize->add_setting( 'larry_admin_bar', array(
+	$wp_customize->add_setting( 'larry_disable_google_fonts', array(
 		'capability' 				=> 'edit_theme_options',
 		'transport'         => 'refresh',
 	) );
 
-	$wp_customize->add_control( 'larry_admin_bar', array(
-		'label'             => __('Show WP Admin Bar?', 'larry'),
-		'description'       => __('Show WordPress admin bar in front end when logged in? Hidden by default.', 'larry'),
+	$wp_customize->add_control( 'larry_disable_google_fonts', array(
+		'label'             => __('Disable Google Fonts?', 'larry'),
+		'description'       => __('Disable loading the 2 Google Fonts for this theme?', 'larry'),
 		'section'           => 'extras',
 		'type'              => 'checkbox',
 		'priority'		      => 14
