@@ -33,14 +33,11 @@ function larry_add_customizer_CSS() {
       a.bp-title-button {
         background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
       }
-      /* WooCommerce Buttons */
-      /*.woocommerce a.button.alt,
-      .woocommerce input.button.alt,
-      .woocommerce button.button.alt,
-      .woocommerce .button.wc-forward,
-      .woocommerce #respond input#submit.alt {
+      /* LifterLMS Buttons */
+      .llms-button-action,
+      .llms-next-lesson .llms-lesson-preview .llms-lesson-link {
         background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
-      }*/
+      }
 
 
       /* Link Hover Color */
@@ -65,19 +62,14 @@ function larry_add_customizer_CSS() {
       #buddypress input[type=submit]:hover {
         background: <?php echo $hover_color; ?>;
       }
-      /* WooCommerce Buttons */
-      /*.woocommerce a.button.alt:hover,
-      .woocommerce input.button.alt:hover,
-      .woocommerce button.button.alt:hover,
-      .woocommerce .button.wc-forward:hover,
-      .woocommerce #respond input#submit.alt:hover,
-      .woocommerce a.button.alt:focus,
-      .woocommerce input.button.alt:focus,
-      .woocommerce button.button.alt:focus,
-      .woocommerce .button.wc-forward:focus,
-      .woocommerce #respond input#submit.alt:focus {
+      /* LifterLMS Buttons */
+      .llms-button-action:hover,
+      .llms-button-action:focus,
+      .llms-next-lesson .llms-lesson-preview .llms-lesson-link:hover,
+      .llms-next-lesson .llms-lesson-preview .llms-lesson-link:focus {
         background: <?php echo $hover_color; ?>;
-      }*/
+      }
+
 
     <?php endif; ?>
 

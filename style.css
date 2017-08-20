@@ -1144,7 +1144,7 @@ article.hentry.post,
 .single .main-content .entry-content-thumbnail {
 	margin-bottom: 30px;
 }
-.entry-title {
+.blog .entry-title {
 		margin: 15px 0 10px;
     font-size: 19px;
 		line-height: 1.4;
@@ -3149,17 +3149,74 @@ ul.wcv_vendorslist div {
 
 /* LifterLMS */
 
+/* LifterLMS buttons */
+.llms-button-action,
+.llms-next-lesson .llms-lesson-preview .llms-lesson-link {
+	background: #09b1cc;
+	color: #fff;
+}
+.llms-button-action:hover,
+.llms-button-action:focus,
+.llms-next-lesson .llms-lesson-preview .llms-lesson-link:hover,
+.llms-next-lesson .llms-lesson-preview .llms-lesson-link:focus {
+	background: #039bb4;
+	color: #fff;
+}
+.llms-lesson-preview .llms-lesson-link {
+		border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* LifterLMS Course Archive */
+.llms-loop-item-content {
+    background: transparent;
+    padding-bottom: 0;
+    margin: 10px;
+}
 .llms-loop-item-content .llms-loop-title,
 .llms-loop-item-content .llms-loop-title:hover {
     color: #3f3f3f;
+		font-size: 19px;
 }
 .llms-loop-item-content .llms-loop-link {
-	color: #3f3f3f;
+    color: #3f3f3f;
+    padding: 5px 5px 15px;
+    background: #fff;
+    border: 1px solid #eee;
 }
 .llms-loop-item-content .llms-loop-link:hover,
 .llms-loop-item-content .llms-loop-link:focus {
 	text-decoration: none;
 }
+
+/* LifterLMS Single Course */
+.llms-syllabus-wrapper {
+    margin: 15px 0;
+    text-align: left;
+}
+.llms-access-plan {
+	box-shadow: none;
+}
+.llms-access-plan-featured {
+	background: transparent;
+}
+.llms-access-plan .llms-access-plan-title {
+	margin-top: 0;
+	background: #3f3f3f;
+}
+.llms-access-plan .llms-access-plan-content {
+	background: #fff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+.llms-access-plan .llms-access-plan-footer {
+	padding-bottom: 25px;
+	background: #fff;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+/* LifterLMS Single Lesson */
 .single-lesson nav#nav-below {
 	display: none;
 }
