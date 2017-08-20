@@ -16,9 +16,9 @@
 
 			<?php do_action( 'tk_single_product_sidebar_first' ); ?>
 
-			<?php if ( ! dynamic_sidebar( 'sidebar-product' ) ) : ?>
-				<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-				<?php endif; ?>
+			<?php if ( ! dynamic_sidebar( 'sidebar-shop' ) ) : ?>
+					<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+					<?php endif; ?>
 			<?php endif; ?>
 
       <?php do_action( 'tk_single_product_sidebar_last' ); ?>

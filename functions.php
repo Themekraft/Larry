@@ -70,19 +70,40 @@ function _tk_widgets_init() {
     		'after_widget'  => '</aside>',
     		'before_title'  => '<h3 class="widget-title">',
     		'after_title'   => '</h3>',
-	  ) );
+	) );
 
-		// sidebar
-		register_sidebar( array(
-	    		'name'          => __( 'Sidebar Products', 'larry' ),
-					'description' 	=> __( 'This is the sidebar used for the products single view.', 'larry'),
-	    		'id'            => 'sidebar-product',
-	    		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-	    		'after_widget'  => '</aside>',
-	    		'before_title'  => '<h3 class="widget-title">',
-	    		'after_title'   => '</h3>',
-		  ) );
+	// sidebar products
+	register_sidebar( array(
+    		'name'          => __( 'Sidebar Products', 'larry' ),
+				'description' 	=> __( 'This is the sidebar used for the products single view.', 'larry'),
+    		'id'            => 'sidebar-product',
+    		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    		'after_widget'  => '</aside>',
+    		'before_title'  => '<h3 class="widget-title">',
+    		'after_title'   => '</h3>',
+	) );
 
+	// sidebar shop
+	register_sidebar( array(
+	  		'name'          => __('Sidebar Shop', 'larry' ),
+				'description' 	=> __('This is the sidebar used for the WooCommerce shop home, category and tag views.', 'larry'),
+	  		'id'            => 'sidebar-shop',
+	  		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	  		'after_widget'  => '</aside>',
+	  		'before_title'  => '<h3 class="widget-title">',
+	  		'after_title'   => '</h3>',
+	) );
+
+	// footer widgetareas
+	register_sidebar( array(
+			'name'          => __('Footer Full Width', 'larry' ),
+			'id'            => 'footer-full-width',
+			'description'   => __('The footer full width widget area.', 'larry' ),
+			'before_widget' => '<div id="%1$s" class="footer-column-widget %2$s">',
+			'after_widget'  => '</div><div class="clear"></div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>'
+	) );
 
   // footer widgetareas
 	register_sidebar( array(
@@ -91,7 +112,7 @@ function _tk_widgets_init() {
 			'description'   => 'The footer columns widgetarea',
 			'before_widget' => '<div id="%1$s" class="footer-column-widget %2$s">',
 			'after_widget'  => '</div><div class="clear"></div>',
-			'before_title'  => '<h3 class="widgettitle">',
+			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>'
 	) );
 
@@ -101,7 +122,7 @@ function _tk_widgets_init() {
 			'description'   => 'The footer columns widgetarea',
 			'before_widget' => '<div id="%1$s" class="footer-column-widget %2$s">',
 			'after_widget'  => '</div><div class="clear"></div>',
-			'before_title'  => '<h3 class="widgettitle">',
+			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>'
 	) );
 
@@ -111,7 +132,7 @@ function _tk_widgets_init() {
 			'description'   => 'The footer columns widgetarea',
 			'before_widget' => '<div id="%1$s" class="footer-column-widget %2$s">',
 			'after_widget'  => '</div><div class="clear"></div>',
-			'before_title'  => '<h3 class="widgettitle">',
+			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>'
 	) );
 
@@ -121,7 +142,7 @@ function _tk_widgets_init() {
 			'description'   => 'The footer columns widgetarea',
 			'before_widget' => '<div id="%1$s" class="footer-column-widget %2$s">',
 			'after_widget'  => '</div><div class="clear"></div>',
-			'before_title'  => '<h3 class="widgettitle">',
+			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>'
 	) );
 

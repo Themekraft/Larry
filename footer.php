@@ -18,6 +18,26 @@
 
 <footer id="footer" class="site-footer" role="contentinfo">
 
+	<?php if( is_active_sidebar( 'footer-full-width' ) ): ?>
+		<div id="footer-full-width">
+			<div class="container nopad textcenter">
+				<div class="row">
+
+					<div class="col-xs-12">
+						<div class="widgetarea">
+
+							<?php if( !dynamic_sidebar( 'footer-full-width' )) { ?>
+							<?php } ?>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
+
 	<?php if( is_active_sidebar( 'footer-column-1' ) || is_active_sidebar( 'footer-column-2' ) || is_active_sidebar( 'footer-column-3' ) || is_active_sidebar( 'footer-column-4' ) ) : ?>
 
 		<div id="footer-columns-wrap" class="footer-columns cc-footer">
@@ -89,7 +109,7 @@
 							'walker' 			=> new wp_bootstrap_navwalker()
 						)); ?>
 
-						
+
 					<!-- Add your social media links here - with Font Awesome icons! See all icons in the "brand icons" section here http://fontawesome.io/icons/ -->
 					<!-- <ul class="social navbar-nav nav">
 						<li><a href="#" target="_new" title="Your Brand on Twitter"><i class="fa fa-twitter"></i></a></li>
