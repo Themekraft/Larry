@@ -107,18 +107,44 @@ function larry_add_customizer_CSS() {
 
     <?php endif; ?>
 
-    /* Hide Breadcrumbs */
+
+    /* Hide categories in loop */
+    <?php if ( get_theme_mod( 'larry_wc_loop_add_cats' ) != true ): ?>
+
+      .larry-wc-loop-cats {
+          display: none;
+      }
+
+    <?php endif; ?>
+
+
+    /* Hide catalog ordering in loop */
+    <?php if ( get_theme_mod( 'larry_wc_loop_hide_catalog_ordering' ) == true ): ?>
+
+      .woocommerce .woocommerce-ordering {
+          display: none;
+      }
+
+    <?php endif; ?>
+
+
+    /* Hide breadcrumbs in single product */
     <?php if ( get_theme_mod( 'larry_wc_hide_breadcrumbs' ) == true ): ?>
+
       .woocommerce .woocommerce-breadcrumb {
         display: none;
       }
+
     <?php endif; ?>
 
-    /* Hide Product Meta */
+
+    /* Hide product meta in single product summary */
     <?php if ( get_theme_mod( 'larry_wc_hide_meta_summary' ) == true ): ?>
+
       .single-product .summary .product_meta {
           display: none;
       }
+
     <?php endif; ?>
 
 

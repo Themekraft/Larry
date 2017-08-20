@@ -286,12 +286,7 @@ if ( class_exists( 'WooCommerce' ) ) {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
     remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-		/* remove product meta from single products summary */
-		// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-		// add_action( 'tk_single_product_sidebar_meta', 'woocommerce_template_single_meta', 40 );
-
-
-    /* always remove sidebars // sidebars added via theme templates! */
+    // always remove sidebars // sidebars added via theme templates! relax guys 
     remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
     add_action('woocommerce_before_main_content', 'tk_theme_wrapper_start', 10);
@@ -312,85 +307,29 @@ if ( class_exists( 'WooCommerce' ) ) {
     // Product Categories
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
-		if ( get_theme_mod( 'larry_wc_loop_hide_catalog_ordering' ) != true ):
-    	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-		endif;
-
-    // Breadcrumbs
-		// if ( get_theme_mod( 'larry_wc_hide_breadcrumbs' ) == true ):
-    	// remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-		// endif;
-
-    // Single Product - Header
-		// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
-		// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-    // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
     // Remove Heading "Product Description"
-    // add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
+    add_filter( 'woocommerce_product_description_heading', 'remove_product_description_heading' );
     function remove_product_description_heading() {
       return '';
     }
 
-    // Remove result count woocommerce shop loops
-    // remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-    // remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-    // remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-
     // Redirect to checkout when adding to cart
-    add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
-    function redirect_to_checkout() {
-        global $woocommerce;
-        $checkout_url = $woocommerce->cart->get_checkout_url();
-        return $checkout_url;
-    }
+		if ( get_theme_mod( 'larry_wc_redirect_to_checkout' ) == true ):
+	    add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+	    function redirect_to_checkout() {
+	        global $woocommerce;
+	        $checkout_url = $woocommerce->cart->get_checkout_url();
+	        return $checkout_url;
+	    }
+		endif;
 
 		// Add category name to product loop item
-		// add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
+		add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
 		function tk_add_cat_to_loop() {
 			global $woocommerce, $product, $post;
 			$categ = $product->get_categories();
-    	echo '<span>'.$categ.'</span>';
-
+    	echo '<small class="larry-wc-loop-cats">'.$categ.'</small>';
 		}
-
-
-		// Check if has purchase history
-		// function tk_has_purchase_history() {
-		//
-		// 	if ( ! class_exists( 'WooCommerce' ) ) {
-		//
-		// 		return;
-		//
-		// 	} else {
-		//
-		//     $count = 0;
-		//     $bought = false;
-		//
-		//     // Get all customer orders
-		//     $customer_orders = get_posts( array(
-		//         'numberposts' => -1,
-		//         'meta_key'    => '_customer_user',
-		//         'meta_value'  => get_current_user_id(),
-		//         'post_type'   => 'shop_order', // WC orders post type
-		//         'post_status' => 'wc-completed' // Only orders with status "completed"
-		//     ) );
-		//
-		//     // Going through each current customer orders
-		//     foreach ( $customer_orders as $customer_order ) {
-		//         $count++;
-		//     }
-		//
-		//     // return "true" when customer has already one order
-		//     if ( $count > 0 ) {
-		//         $bought = true;
-		//     }
-		//     return $bought;
-		//
-		// 	}
-		//
-		// }
 
 		// Redirect to Thank You page after payment successful
 		// add_action( 'woocommerce_thankyou', function(){

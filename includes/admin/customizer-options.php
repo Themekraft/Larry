@@ -127,10 +127,10 @@ function larry_customizer( $wp_customize ) {
 			'priority'		      => 20,
 			'type'        			=> 'radio',
 			'choices'     			=> array(
-						'always'   => __('Show always', 'larry'),
-						'notempty'   => __('Only when items added to cart', 'larry'),
-						'never'   => __('Show never', 'larry')
-					)
+					'always'  	=> __('Always show', 'larry'),
+					'never'   	=> __('Never show', 'larry'),
+					'notempty'  => __('Just when items in cart', 'larry')
+				)
 		) );
 
 
@@ -157,7 +157,7 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_cart_buttons', array(
-			'label'             => __('Hide add-to-cart buttons in shop loop?', 'larry'),
+			'label'             => __('Hide add-to-cart buttons?', 'larry'),
 			// 'description'       => __('Hide add-to-cart buttons in category views?', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
@@ -165,17 +165,37 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
+
+		// Hide catalog ordering
+
 		$wp_customize->add_setting( 'larry_wc_loop_hide_catalog_ordering', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default' 					=> true
+		) );
+
+		$wp_customize->add_control( 'larry_wc_loop_hide_catalog_ordering', array(
+			'label'             => __('Hide catalog ordering?', 'larry'),
+			'section'           => 'larry_wc',
+			'type'              => 'checkbox',
+			'priority'		      => 40
+		) );
+
+
+
+		// Display categories
+
+		$wp_customize->add_setting( 'larry_wc_loop_add_cats', array(
 			'capability' 				=> 'edit_theme_options',
 			'transport'         => 'refresh',
 			'default' 					=> false
 		) );
 
-		$wp_customize->add_control( 'larry_wc_loop_hide_catalog_ordering', array(
-			'label'             => __('Hide catalog ordering in shop loop?', 'larry'),
+		$wp_customize->add_control( 'larry_wc_loop_add_cats', array(
+			'label'             => __('Display categories in each item?', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
-			'priority'		      => 40
+			'priority'		      => 50
 		) );
 
 
@@ -209,6 +229,7 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
+
 		// Hide product meta in summary
 
 		$wp_customize->add_setting( 'larry_wc_hide_meta_summary', array(
@@ -219,10 +240,41 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_hide_meta_summary', array(
 			'label'             => __('Hide extra data in product summary?', 'larry'),
-			'description'       => __('Stuff like categories, tags, SKU... if you like it simple and clean just remove the lot.', 'larry'),
+			'description'       => __('Categories, tags, SKU... Got a simple shop? Then just remove it.', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
 			'priority'		      => 70
+		) );
+
+
+
+		// Checkout - Section Title
+
+		$wp_customize->add_setting( 'larry_wc_checkout', array() );
+
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_checkout', array(
+			'section' 	=> 'larry_wc',
+			'priority' 	=> 80,
+			'label' 		=> __( 'Checkout', 'larry' ),
+			'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
+		) ) );
+
+
+
+		// Redirect to checkout after adding item to cart?
+
+		$wp_customize->add_setting( 'larry_wc_redirect_to_checkout', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default' 					=> false
+		) );
+
+		$wp_customize->add_control( 'larry_wc_redirect_to_checkout', array(
+			'label'             => __('Redirect to checkout after adding a product to cart?', 'larry'),
+			'description'       => __('Use it wisely. It can help increase conversions a lot, but only useful for higher priced products or when your customers mostly just buy one product at a time anyway. ', 'larry'),
+			'section'           => 'larry_wc',
+			'type'              => 'checkbox',
+			'priority'		      => 90
 		) );
 
 
