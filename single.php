@@ -12,7 +12,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
 
-			<div id="content" class="main-content-inner col-xs-12 col-md-8 col-lg-8">
+			<div id="content" class="main-content-inner col-xs-12 <?php if ( get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -37,5 +37,8 @@ get_header(); ?>
 
       </div>
 
-<?php get_sidebar(); ?>
+<?php if ( get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) : ?>
+  <?php get_sidebar(); ?>
+<?php endif; ?>
+
 <?php get_footer(); ?>

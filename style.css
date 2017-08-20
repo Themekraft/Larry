@@ -1696,9 +1696,7 @@ form.comment-form input#url {
 
 /* WooCommerce Single Product Tabs & Main Content */
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    background: #fbfbfb;
     z-index: 2;
-    border-bottom-color: #fbfbfb;
 }
 
 /* WooCommerce Cart & Checkout Process */

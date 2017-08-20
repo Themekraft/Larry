@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
   <div class="row">
 
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 <?php if ( get_theme_mod( 'larry_wc_single_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
 
     	<?php
     		/**
@@ -96,8 +96,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				// do_action( 'woocommerce_sidebar' );
 			?>
 
-
-		<?php get_sidebar( 'product' ); ?>
+<?php if ( get_theme_mod( 'larry_wc_single_sidebars' ) == true ) : ?>
+  <?php get_sidebar( 'product' ); ?>
+<?php endif; ?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

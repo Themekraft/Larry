@@ -81,6 +81,11 @@ function larry_add_customizer_CSS() {
 
       body { background: #fbfbfb; }
 
+      .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+          background: #fbfbfb;
+          border-bottom-color: #fbfbfb;
+      }
+
     <?php endif; ?>
 
 

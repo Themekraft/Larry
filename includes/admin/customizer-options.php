@@ -161,7 +161,7 @@ function larry_customizer( $wp_customize ) {
 	$wp_customize->add_setting( 'larry_blog_archive_sidebars', array(
 		'capability' 				=> 'edit_theme_options',
 		'transport'         => 'refresh',
-		'default'						=> true
+		'default'						=> false
 	) );
 
 	$wp_customize->add_control( 'larry_blog_archive_sidebars', array(
@@ -332,7 +332,7 @@ function larry_customizer( $wp_customize ) {
 		) ) );
 
 
-		// Display Product Archive Sidebars
+		// Display Single Product Sidebars
 
 		$wp_customize->add_setting( 'larry_wc_single_sidebars', array(
 			'capability' 				=> 'edit_theme_options',

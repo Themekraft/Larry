@@ -325,7 +325,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 			if ( is_product() ) {
 				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12">';
 			} else {
-				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12 col-md-8">';
+				if ( get_theme_mod( 'larry_wc_archive_sidebars' ) == true ) {
+					$add_classes = 'col-md-8';
+				}
+				echo '<div class="col-xs-12 ' . $add_classes . '">';
+				// echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12 col-md-8">';
 			}
     }
 
