@@ -89,14 +89,14 @@
 							'walker' 			=> new wp_bootstrap_navwalker()
 						)); ?>
 
-
+						
 					<!-- Add your social media links here - with Font Awesome icons! See all icons in the "brand icons" section here http://fontawesome.io/icons/ -->
-					<ul class="social navbar-nav nav">
+					<!-- <ul class="social navbar-nav nav">
 						<li><a href="#" target="_new" title="Your Brand on Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" target="_new" title="Your Brand on Reddit"><i class="fa fa-behance"></i></a></li>
 						<li><a href="#" target="_new" title="Your Brand on Spotify"><i class="fa fa-spotify"></i></a></li>
 						<li><a href="#" target="_new" title="Your Brand on Spotify"><i class="fa fa-soundcloud"></i></a></li>
-					</ul>
+					</ul> -->
 
 				</div>
 			</div>
