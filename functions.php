@@ -500,3 +500,17 @@ function adjustBrightness($hex, $steps) {
 
     return $return;
 }
+
+
+// get the right template style for the blog archives depending on sidebar
+function blog_template_style() {
+
+	if ( get_theme_mod( 'larry_blog_archive_sidebars' ) == true ) :
+		$template_style = 'content-2-col';
+	else:
+		$template_style = 'content-3-col';
+	endif;
+
+	return $template_style;
+
+}

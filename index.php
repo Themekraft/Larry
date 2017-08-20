@@ -17,7 +17,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
 
-			<div id="content" class="main-content-inner col-xs-12">
+			<div id="content" class="main-content-inner col-xs-12  <?php if ( get_theme_mod( 'larry_blog_archive_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
 
 				<?php if ( have_posts() ) : ?>
 
@@ -26,7 +26,7 @@ get_header(); ?>
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-                  <?php get_template_part( 'content-3-col', get_post_format() ); ?>
+                  <?php get_template_part( blog_template_style(), get_post_format() ); ?>
 
             <?php endwhile; ?>
 
@@ -44,5 +44,8 @@ get_header(); ?>
 
       </div>
 
-<?php // get_sidebar(); ?>
+<?php if ( get_theme_mod( 'larry_blog_archive_sidebars' ) == true ) : ?>
+  <?php get_sidebar(); ?>
+<?php endif; ?>
+
 <?php get_footer(); ?>

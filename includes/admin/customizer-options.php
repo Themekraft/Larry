@@ -29,6 +29,17 @@ function larry_customizer( $wp_customize ) {
 		)
 	);
 
+	// Add Blog Section
+
+	$wp_customize->add_section(
+		'larry_blog',
+		array(
+			'title' 			=> __('Blog', 'larry'),
+			'description' => __('Theme options for your blog styling.', 'larry'),
+			'priority' 		=> 80,
+		)
+	);
+
 
 	// Menu Style
 
@@ -133,11 +144,58 @@ function larry_customizer( $wp_customize ) {
  	) );
 
 
+	// Blog Options
+
+	$wp_customize->add_setting( 'larry_blog_options', array() );
+
+	$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_blog_options', array(
+		'section' 	=> 'larry_blog',
+		'priority' 	=> 10,
+		'label' 		=> __( 'Display sidebars', 'larry' ),
+		// 'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
+	) ) );
+
+
+	// Blog Archive Sidebars
+
+	$wp_customize->add_setting( 'larry_blog_archive_sidebars', array(
+		'capability' 				=> 'edit_theme_options',
+		'transport'         => 'refresh',
+		'default'						=> true
+	) );
+
+	$wp_customize->add_control( 'larry_blog_archive_sidebars', array(
+		'label'             => __('for blog archives', 'larry'),
+		'section'           => 'larry_blog',
+		'type'              => 'checkbox',
+		'priority'		      => 20
+	) );
+
+
+	// Blog Single Post Sidebars
+
+	$wp_customize->add_setting( 'larry_blog_single_post_sidebars', array(
+		'capability' 				=> 'edit_theme_options',
+		'transport'         => 'refresh',
+		'default'						=> true
+	) );
+
+	$wp_customize->add_control( 'larry_blog_single_post_sidebars', array(
+		'label'             => __('for single posts', 'larry'),
+		'section'           => 'larry_blog',
+		'type'              => 'checkbox',
+		'priority'		      => 30
+	) );
+
+
 	// WooCommerce Options
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
-		$wp_customize->add_section(
+
+		// Add WooCommerce Panel
+
+		$wp_customize->add_panel(
 			'larry_wc',
 			array(
 				'title' => __('WooCommerce', 'larry'),
@@ -147,38 +205,71 @@ function larry_customizer( $wp_customize ) {
 		);
 
 
-		// Show cart in top menu?
+		// Add Product Archives Section
 
-		$wp_customize->add_setting( 'larry_wc_show_top_nav_cart', array(
-			'capability' 				=> 'edit_theme_options',
-			'transport'         => 'refresh',
-			'default'  		 			=> 'always',
-		) );
+		$wp_customize->add_section(
+			'larry_wc_archives',
+			array(
+				'title' => __('Product Archives', 'larry'),
+				'description' => '',
+				'panel' 			=> 'larry_wc',
+				'priority' => 10
+			)
+		);
 
-		$wp_customize->add_control( 'larry_wc_show_top_nav_cart', array(
-			'label'             => __('Show cart icon in top menu', 'larry'),
-			'description'       => __('When to show the cart icon?', 'larry'),
-			'section'           => 'larry_wc',
-			'priority'		      => 20,
-			'type'        			=> 'radio',
-			'choices'     			=> array(
-					'always'  	=> __('Always show', 'larry'),
-					'never'   	=> __('Never show', 'larry'),
-					'notempty'  => __('Just when items in cart', 'larry')
-				)
-		) );
+
+		// Add Single Product Section
+
+		$wp_customize->add_section(
+			'larry_wc_single',
+			array(
+				'title' => __('Single Products', 'larry'),
+				'description' => '',
+				'panel' 			=> 'larry_wc',
+				'priority' => 10
+			)
+		);
+
+
+		// Add Checkout Section
+
+		$wp_customize->add_section(
+			'larry_wc_checkout',
+			array(
+				'title' => __('Checkout', 'larry'),
+				'description' => '',
+				'panel' 			=> 'larry_wc',
+				'priority' => 100
+			)
+		);
 
 
 		// Product Archives - Section Title
 
-		$wp_customize->add_setting( 'larry_wc_archives', array() );
+		$wp_customize->add_setting( 'larry_wc_archives_desc', array() );
 
-		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_archives', array(
-			'section' 	=> 'larry_wc',
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_archives_desc', array(
+			'section' 	=> 'larry_wc_archives',
 			'priority' 	=> 30,
 			'label' 		=> __( 'Product Archives', 'larry' ),
 			'description' 	=> __( 'Options for your shop homepage, and your shop\'s category and tags pages.', 'larry' )
 		) ) );
+
+
+		// Display Product Archive Sidebars
+
+		$wp_customize->add_setting( 'larry_wc_archive_sidebars', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default'						=> true
+		) );
+
+		$wp_customize->add_control( 'larry_wc_archive_sidebars', array(
+			'label'             => __('Display sidebars?', 'larry'),
+			'section'           => 'larry_wc_archives',
+			'type'              => 'checkbox',
+			'priority'		      => 30
+		) );
 
 
 		// Hide cart buttons in loop
@@ -191,7 +282,7 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_cart_buttons', array(
 			'label'             => __('Hide add-to-cart buttons?', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_archives',
 			'type'              => 'checkbox',
 			'priority'		      => 40
 		) );
@@ -207,7 +298,7 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_catalog_ordering', array(
 			'label'             => __('Hide catalog ordering?', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_archives',
 			'type'              => 'checkbox',
 			'priority'		      => 40
 		) );
@@ -223,7 +314,7 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_loop_add_cats', array(
 			'label'             => __('Display categories in each item?', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_archives',
 			'type'              => 'checkbox',
 			'priority'		      => 50
 		) );
@@ -231,14 +322,30 @@ function larry_customizer( $wp_customize ) {
 
 		// Single Products - Section Title
 
-		$wp_customize->add_setting( 'larry_wc_single_product', array() );
+		$wp_customize->add_setting( 'larry_wc_single_desc', array() );
 
-		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_single_product', array(
-			'section' 	=> 'larry_wc',
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_single_desc', array(
+			'section' 	=> 'larry_wc_single',
 			'priority' 	=> 50,
 			'label' 		=> __( 'Single Products', 'larry' ),
 			'description' 	=> __( 'Options for your single product view.', 'larry' )
 		) ) );
+
+
+		// Display Product Archive Sidebars
+
+		$wp_customize->add_setting( 'larry_wc_single_sidebars', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default'						=> true
+		) );
+
+		$wp_customize->add_control( 'larry_wc_single_sidebars', array(
+			'label'             => __('Display sidebars?', 'larry'),
+			'section'           => 'larry_wc_single',
+			'type'              => 'checkbox',
+			'priority'		      => 60
+		) );
 
 
 		// Hide breadcrumbs
@@ -251,9 +358,9 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_hide_breadcrumbs', array(
 			'label'             => __('Hide breadcrumbs in single product?', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_single',
 			'type'              => 'checkbox',
-			'priority'		      => 60
+			'priority'		      => 70
 		) );
 
 
@@ -268,21 +375,43 @@ function larry_customizer( $wp_customize ) {
 		$wp_customize->add_control( 'larry_wc_hide_meta_summary', array(
 			'label'             => __('Hide extra data in product summary?', 'larry'),
 			'description'       => __('Categories, tags, SKU... Got a simple shop? Then just remove it.', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_single',
 			'type'              => 'checkbox',
-			'priority'		      => 70
+			'priority'		      => 80
+		) );
+
+
+		// Show cart in top menu?
+
+		$wp_customize->add_setting( 'larry_wc_show_top_nav_cart', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default'  		 			=> 'always',
+		) );
+
+		$wp_customize->add_control( 'larry_wc_show_top_nav_cart', array(
+			'label'             => __('Show cart icon in top menu', 'larry'),
+			'description'       => __('When to show the cart icon?', 'larry'),
+			'section'           => 'larry_wc_checkout',
+			'priority'		      => 70,
+			'type'        			=> 'radio',
+			'choices'     			=> array(
+					'always'  	=> __('Always show', 'larry'),
+					'never'   	=> __('Never show', 'larry'),
+					'notempty'  => __('Just when items in cart', 'larry')
+				)
 		) );
 
 
 		// Checkout - Section Title
 
-		$wp_customize->add_setting( 'larry_wc_checkout', array() );
+		$wp_customize->add_setting( 'larry_wc_checkout_desc', array() );
 
-		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_checkout', array(
-			'section' 	=> 'larry_wc',
+		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_checkout_desc', array(
+			'section' 	=> 'larry_wc_checkout',
 			'priority' 	=> 80,
-			'label' 		=> __( 'Checkout', 'larry' ),
-			'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
+			'label' 		=> __( 'Direct Checkout', 'larry' ),
+			// 'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
 		) ) );
 
 
@@ -297,7 +426,7 @@ function larry_customizer( $wp_customize ) {
 		$wp_customize->add_control( 'larry_wc_redirect_to_checkout', array(
 			'label'             => __('Redirect to checkout after adding a product to cart?', 'larry'),
 			'description'       => __('Use it wisely. It can help increase conversions a lot, but only useful for higher priced products or when your customers mostly just buy one product at a time anyway. ', 'larry'),
-			'section'           => 'larry_wc',
+			'section'           => 'larry_wc_checkout',
 			'type'              => 'checkbox',
 			'priority'		      => 90
 		) );
