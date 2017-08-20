@@ -84,6 +84,15 @@ function larry_add_customizer_CSS() {
 
 
 
+    /* White background */
+    <?php if ( get_theme_mod( 'larry_bg_color' ) == true ): ?>
+
+      body { background: #fff; }
+
+    <?php endif; ?>
+
+
+
 
     /* Menu Styling Options */
 

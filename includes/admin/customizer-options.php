@@ -81,8 +81,24 @@ function larry_customizer( $wp_customize ) {
 	 'description' => __('Used for all your links. For example your brand color.', 'larry'),
 	 'section'  => 'colors',
 	 'settings' => 'larry_link_color',
-	 'priority' => 20
+	 'priority' => 1
 	) ) );
+
+
+	// Background Color
+
+	$wp_customize->add_setting( 'larry_bg_color', array(
+		'capability' 				=> 'edit_theme_options',
+		'transport'         => 'refresh',
+		'default'						=> false
+	) );
+
+	$wp_customize->add_control( 'larry_bg_color', array(
+		'label'             => __('White background', 'larry'),
+		'section'           => 'colors',
+		'type'              => 'checkbox',
+		'priority'		      => 2
+	) );
 
 
 	// Brand Logo
