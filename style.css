@@ -1309,7 +1309,8 @@ form.comment-form input#url {
 	padding: 0;
 	line-height: 1.8;
 }
-.page-template-page-featured-image article.page {
+.page-template-page-featured-image article.page,
+.page-template-page-featured-image-sidebar article.page {
 	margin-top: 30px;
 }
 
