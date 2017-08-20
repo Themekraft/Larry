@@ -77,4 +77,35 @@ jQuery( document ).ready( function( jQuery ) {
       }
     }
 
+
+    // close sliding nav etc on resize, if it was open..
+    (function($) {
+
+        var resizeTimer; // Set resizeTimer to empty so it resets on page load
+
+        function resizeFunction() {
+            // Stuff that should happen on resize
+            // check first if it is open at all
+            if ( jQuery( "#sitewrap" ).is( ".slidenav-open" ) ) {
+              // and that's gonna happen then:
+              jQuery('#topnav').removeClass("tf-open");
+              jQuery('#slidenav-wrap').removeClass("tf-open");
+              jQuery('#sitewrap').removeClass("slidenav-open");
+            }
+
+        };
+
+        // On resize, run the function and reset the timeout
+        // 250 is the delay in milliseconds. Change as you see fit.
+        $(window).resize(function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resizeFunction, 10);
+        });
+
+        resizeFunction();
+
+    })(jQuery);
+
+
+
 } );
