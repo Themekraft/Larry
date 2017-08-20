@@ -4,8 +4,11 @@
 
 function larry_customizer( $wp_customize ) {
 
+
+	// Add Extras Section
+
 	$wp_customize->add_section(
-		'extras',
+		'larry_extras',
 		array(
 			'title' => __('Extras', 'larry'),
 			'description' => '',
@@ -14,21 +17,54 @@ function larry_customizer( $wp_customize ) {
 	);
 
 
-	// Disable Google Fonts
+	// Add Menu Styling Section
 
-	$wp_customize->add_setting( 'larry_disable_google_fonts', array(
+	$wp_customize->add_section(
+		'larry_menu_styling',
+		array(
+			'title' 			=> __('Menu Styling', 'larry'),
+			'description' => __('Theme options for your menu styling.', 'larry'),
+			'panel' 			=> 'nav_menus',
+			'priority' 		=> 8,
+		)
+	);
+
+
+	// Menu Style
+
+	$wp_customize->add_setting( 'larry_menu_style', array(
 		'capability' 				=> 'edit_theme_options',
 		'transport'         => 'refresh',
+		'default'  		 			=> 'light',
 	) );
 
-	$wp_customize->add_control( 'larry_disable_google_fonts', array(
-		'label'             => __('Disable Google Fonts?', 'larry'),
-		'description'       => __('Disable loading the 2 Google Fonts for this theme?', 'larry'),
-		'section'           => 'extras',
+	$wp_customize->add_control( 'larry_menu_style', array(
+		'label'             => __('Menu Style', 'larry'),
+		'description'       => __('Dark or light menu?', 'larry'),
+		'section'           => 'larry_menu_styling',
+		'priority'		      => 40,
+		'type'        			=> 'radio',
+		'choices'     			=> array(
+				'light'  	=> __('Light top menu', 'larry'),
+				'dark'   	=> __('Dark top menu', 'larry')
+			)
+	) );
+
+
+	// Top menu fixed?
+
+	$wp_customize->add_setting( 'larry_fixed_top_nav', array(
+		'capability' 				=> 'edit_theme_options',
+		'transport'         => 'refresh',
+		'default'						=> true
+	) );
+
+	$wp_customize->add_control( 'larry_fixed_top_nav', array(
+		'label'             => __('Top menu fixed?', 'larry'),
+		'section'           => 'larry_menu_styling',
 		'type'              => 'checkbox',
-		'priority'		      => 14
+		'priority'		      => 20
 	) );
-
 
 
 	// Brand Color
@@ -81,12 +117,9 @@ function larry_customizer( $wp_customize ) {
  	) );
 
 
-
-
 	// WooCommerce Options
 
 	if ( class_exists( 'WooCommerce' ) ) {
-
 
 		$wp_customize->add_section(
 			'larry_wc',
@@ -96,20 +129,6 @@ function larry_customizer( $wp_customize ) {
 				'priority' => 180
 			)
 		);
-
-
-
-		// Description for the WooCommerce Tab
-
-		$wp_customize->add_setting( 'larry_wc_start', array() );
-
-		$wp_customize->add_control( new Prefix_Custom_Content( $wp_customize, 'larry_wc_start', array(
-			'section' 	=> 'larry_wc',
-			'priority' 	=> 10,
-			// 'label' 		=> __( 'WooCommerce Theme Options', 'larry' ),
-			// 'content' 	=> __( 'Some quick theme options for your WooCommerce design.', 'larry' ) . '</p>',
-		) ) );
-
 
 
 		// Show cart in top menu?
@@ -134,7 +153,6 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
-
 		// Product Archives - Section Title
 
 		$wp_customize->add_setting( 'larry_wc_archives', array() );
@@ -147,7 +165,6 @@ function larry_customizer( $wp_customize ) {
 		) ) );
 
 
-
 		// Hide cart buttons in loop
 
 		$wp_customize->add_setting( 'larry_wc_loop_hide_cart_buttons', array(
@@ -158,12 +175,10 @@ function larry_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_cart_buttons', array(
 			'label'             => __('Hide add-to-cart buttons?', 'larry'),
-			// 'description'       => __('Hide add-to-cart buttons in category views?', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
 			'priority'		      => 40
 		) );
-
 
 
 		// Hide catalog ordering
@@ -182,7 +197,6 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
-
 		// Display categories
 
 		$wp_customize->add_setting( 'larry_wc_loop_add_cats', array(
@@ -199,7 +213,6 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
-
 		// Single Products - Section Title
 
 		$wp_customize->add_setting( 'larry_wc_single_product', array() );
@@ -210,7 +223,6 @@ function larry_customizer( $wp_customize ) {
 			'label' 		=> __( 'Single Products', 'larry' ),
 			'description' 	=> __( 'Options for your single product view.', 'larry' )
 		) ) );
-
 
 
 		// Hide breadcrumbs
@@ -227,7 +239,6 @@ function larry_customizer( $wp_customize ) {
 			'type'              => 'checkbox',
 			'priority'		      => 60
 		) );
-
 
 
 		// Hide product meta in summary
@@ -247,7 +258,6 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
-
 		// Checkout - Section Title
 
 		$wp_customize->add_setting( 'larry_wc_checkout', array() );
@@ -258,7 +268,6 @@ function larry_customizer( $wp_customize ) {
 			'label' 		=> __( 'Checkout', 'larry' ),
 			'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
 		) ) );
-
 
 
 		// Redirect to checkout after adding item to cart?
@@ -312,7 +321,6 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 
-
 		// BP notifications icon in top menu
 
 		if ( bp_is_active( 'notifications' ) ) {
@@ -353,6 +361,21 @@ function larry_customizer( $wp_customize ) {
 		}
 
 
+		// Extras - Disable Google Fonts
+
+		$wp_customize->add_setting( 'larry_disable_google_fonts', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default'						=> false
+		) );
+
+		$wp_customize->add_control( 'larry_disable_google_fonts', array(
+			'label'             => __('Don\'t load Google Fonts?', 'larry'),
+			'description'       => __('Disable loading the 2 Google Fonts for this theme?', 'larry'),
+			'section'           => 'larry_extras',
+			'type'              => 'checkbox',
+			'priority'		      => 10
+		) );
 
 
 	}

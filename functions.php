@@ -165,6 +165,14 @@ function _tk_scripts() {
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
 
+
+// Add CSS to WP Admin
+function larry_admin_css() {
+  wp_enqueue_style('larry_admin_css', get_template_directory_uri().'/includes/css/admin.css');
+}
+add_action('admin_enqueue_scripts', 'larry_admin_css');
+
+
 /**
  * Custom template tags for this theme.
  */
@@ -286,7 +294,7 @@ if ( class_exists( 'WooCommerce' ) ) {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
     remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
-    // always remove sidebars // sidebars added via theme templates! relax guys 
+    // always remove sidebars // sidebars added via theme templates! relax guys
     remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
     add_action('woocommerce_before_main_content', 'tk_theme_wrapper_start', 10);

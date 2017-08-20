@@ -85,6 +85,59 @@ function larry_add_customizer_CSS() {
 
 
 
+    /* Menu Styling Options */
+
+    /* Fixed top nav */
+    <?php if ( get_theme_mod( 'larry_fixed_top_nav' ) != true ): ?>
+
+      #topnav {
+          position: absolute;
+      }
+      @media (max-width: 767px) {
+        #topnav .tk-extra-nav {
+            position: absolute;
+            /*right: 3px;*/
+        }
+      }
+
+    <?php endif; ?>
+
+
+    /* Menu style */
+    <?php if ( get_theme_mod( 'larry_menu_style' ) == 'dark' ): ?>
+
+      #topnav {
+          background: #3f3f3f;
+          color: #999;
+      }
+
+      #topnav a,
+      #topnav ul li a,
+      #topnav .tk-extra-nav li a.new {
+          color: #dfdfdf;
+      }
+      #topnav a:hover,
+      #topnav a:focus {
+          color: #dfdfdf;
+      }
+      #topnav ul li a:hover,
+      #topnav ul li a:focus,
+      #topnav .tk-extra-nav li a:hover,
+      #topnav .tk-extra-nav li a:focus {
+          color: #dfdfdf;
+          background: #2f2f2f;
+      }
+      .tf-burger span,
+      .tf-burger span::after,
+      .tf-burger span::before {
+        background: #dfdfdf;
+      }
+
+    <?php endif; ?>
+
+
+
+
 
     /* WooCommerce Options */
 

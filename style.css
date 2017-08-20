@@ -622,7 +622,7 @@ display: block;
   top: -8px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 	.tf-burger, #tf-slide-nav {
     display: none;
 	}
@@ -715,7 +715,7 @@ display: block;
 	display: none;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 	#topnav,
 	#topnav-logo {
 		height: 72px;
@@ -765,13 +765,13 @@ display: block;
   height: auto;
   padding: 15px 20px;
 	background: #414141;
-	color: #bbb;
+	color: #dfdfdf;
 	transition: all 0.08s ease-in;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 #topnav ul.dropdown-menu li a:hover,
 #topnav ul.dropdown-menu li a:focus {
-	background: #4f4f4f;
+	background: #2f2f2f;
 	color: #eee;
 	border-top: none;
 	padding: 15px 20px;
@@ -851,7 +851,7 @@ display: block;
 #topnav .tk-extra-nav .tk-profile-li {
 	display: none;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     #topnav .tk-extra-nav {
       position: relative;
       height: 71px;
@@ -1037,7 +1037,7 @@ display: block;
 	overflow: hidden;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 	#mainwrap {
 		margin-top: 72px;
 	}
