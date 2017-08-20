@@ -75,16 +75,6 @@ body {
 	}
 }
 
-/* Cool Elements */
-.nopad {
-	padding-bottom: 0;
-}
-.container-flex {
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Oswald', 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -268,20 +258,6 @@ input[type="submit"]:focus,
 	text-decoration: none;
 }
 
-/* Other Bootstrap elements */
-.panel {
-	border-radius: 0;
-}
-.panel-footer {
-  padding: 0px 15px 15px;
-  background-color: transparent;
-  border-top: none;
-	border-radius: 0;
-}
-.panel-default>.panel-heading {
-	background: #fafafa;
-	border-radius: 0;
-}
 
 /* Alignment */
 .alignleft {
@@ -423,8 +399,57 @@ object {
 .alert {
 	border-radius: 0;
 }
+.form-control {
+    border-radius: 0;
+    padding: 10px 25px;
+    font-size: 21px;
+    height: auto;
+}
+.panel {
+	border-radius: 0;
+}
+.panel-footer {
+  padding: 0px 15px 15px;
+  background-color: transparent;
+  border-top: none;
+	border-radius: 0;
+}
+.panel-default>.panel-heading {
+	background: #fafafa;
+	border-radius: 0;
+}
+
+/* Disable scrollbar on Chrome and Safari browsers */
+html::-webkit-scrollbar { width: 0 !important }
+
+/* Search Fixes */
+.search .results-group {
+  overflow: auto;
+}
+.search .results-group .entry-summary {
+    height: auto;
+}
+.search #buddypress ul.item-list li {
+    border: none;
+    overflow: auto;
+}
+.search #buddypress ul.item-list li div.action {
+  display: none;
+}
+.border-top {
+  border-top: 1px solid #e1e1e1;
+}
+
 
 /* Content */
+.nopad {
+	padding-bottom: 0;
+}
+.container-flex {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
 .main-content-inner {
 	padding-bottom: 1.5em;
 }
@@ -475,13 +500,10 @@ display: block;
 .dropdown-submenu:active>a:after{border-left-color:#ffffff;}
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
-/* Here some needed widget styles
- * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
 .widget { margin-bottom: 2.5em; }
 .widget_nav_menu ul.sub-menu li, .widget_pages ul.children li { padding-left: 15px; }
 
-/* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
- * Note: you can change the whole appearance of the search_form() function in our searchform.php */
+/* Hiding the search widget's button in widgets. not needed mate */
 .widget_search .search-form input[type="submit"] { display: none; }
 
 /* Make sure select elements fit in widgets */
@@ -489,8 +511,7 @@ display: block;
 	max-width: 100%;
 }
 
-/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
- * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
+/* Nested comments */
  .comment .children { margin-left: 1.5em; }
 
 /* WP Theme Repository Requirements */
@@ -500,7 +521,6 @@ display: block;
 .entry-meta {
 	clear: both;
 }
-
 
 /* The Burger Icon */
 .tf-burger {
@@ -618,8 +638,6 @@ display: block;
 	position: fixed;
 	z-index: 99999;
   float: none;
-  /*top: 0;
-  right: 0;*/
 	overflow: visible;
 	-webkit-transition: -webkit-transform .25s ease-out;
 	transition: transform .25s ease-out;
@@ -645,8 +663,6 @@ display: block;
 #topnav li a:hover,
 #topnav li a:focus {
 	background: #f9f9f9;
-  /*border-top: 3px solid;
-  padding-top: 21px;*/
 }
 #topnav li.active a,
 #topnav li.active a:hover,
@@ -695,11 +711,6 @@ display: block;
     font-weight: normal;
     display: block;
 }
-/*@media (min-width: 550px) {
-  #topnav-title {
-    display: block;
-  }
-}*/
 #topnav #main-menu {
 	display: none;
 }
@@ -768,7 +779,7 @@ display: block;
 
 
 
-/* The Extra TK Icon Nav */
+/* The Extra WC BP Dropdown Nav */
 #topnav .tk-extra-nav {
   position: fixed;
   top: 0;
@@ -1056,79 +1067,8 @@ display: block;
 	}
 }
 
-/* TK Post Grid View */
-.tk-grid-row.row {
-	margin: 0 -10px;
-}
-.tk-postgrid {
-	width: 50%;
-	padding: 0 5px;
-	float: left;
-	margin-bottom: 15px;
-}
-@media (min-width: 492px) {
-	.tk-postgrid {
-		width: 33.33%;
-	}
-}
-@media (min-width: 768px) {
-	.tk-postgrid {
-		width: 25%;
-	}
-}
-@media (min-width: 1200px) {
-	.tk-postgrid {
-		width: 20%;
-	}
-}
-.tk-grid-link {
-  color: inherit;
-  text-decoration: none;
-}
-.tk-grid-link:hover,
-.tk-grid-link:focus {
-  color: inherit;
-  text-decoration: none;
-}
-.tk-tile {
-  background: #f3f3f3;
-	overflow: auto;
-	min-height: 300px;
-	border: 1px solid #ddd;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
-}
-@media (min-width: 492px) {
-	.tk-tile {
-		min-height: 300px;
-	}
-}
-@media (min-width: 768px) {
-	.tk-tile {
-		min-height: 300px;
-	}
-}
-@media (min-width: 992px) {
-	.tk-tile {
-		min-height: 350px;
-	}
-}
-@media (min-width: 1200px) {
-	.tk-tile {
-		min-height: 340px;
-	}
-}
-.tk-grid-link:hover .tk-tile,
-.tk-grid-link:focus .tk-tile {
-	background: #fcfcfc;
-	/*box-shadow: 1px 1px 3px rgba(0,0,0,0.24);*/
-}
-.tk-thumb {
-	border-bottom: 1px solid #ddd;
-}
-.tk-grid-link:hover .tk-thumb,
-.tk-grid-link:focus .tk-thumb {
-	opacity: 1;
-}
+
+/* TK Post Grid */
 .tk-content-wrap {
   padding: 0 8px 4px;
 }
@@ -1483,6 +1423,15 @@ form.comment-form input#url {
 
 
 
+
+
+
+
+
+
+
+
+
 /* WooCommerce
 ********************************************************/
 
@@ -1512,12 +1461,8 @@ form.comment-form input#url {
 		clear: none !important;
 	}
 }
-.woocommerce ul.products li.product a * {
-	transition: all 0.03s ease-out;
-	-webkit-transition: all 0.06s ease-out;
-	-moz-transition: all 0.06s ease-out;
-	-ms-transition: all 0.06s ease-out;
-	-o-transition: all 0.06s ease-out;
+.woocommerce ul.products li.product .button {
+    font-size: 13px;
 }
 .woocommerce ul.products li.product a img {
     margin: 0 0 5px;
@@ -1787,6 +1732,10 @@ table.shop_table.shop_table_responsive.my_account_orders {
     line-height: 1;
     height: 38px;
 }
+
+
+
+
 
 
 
@@ -2884,6 +2833,101 @@ a.bp-title-button {
 
 
 
+
+
+
+
+
+
+
+/* The Events Calendar by Modern Tribe - CSS Additions */
+
+/* Event Calendar Additions */
+.tribe_community_edit .ui-datepicker .ui-datepicker-title {
+  color: #888;
+}
+.tribe_community_edit .ui-datepicker .ui-datepicker-header {
+  margin-bottom: 10px;
+}
+#tribe-events-content a.tribe_paged {
+    background: transparent;
+}
+@media (min-width: 768px) {
+  .tribe-bar-collapse .tribe-bar-filters-inner > div {
+      width: 25%;
+  }
+}
+
+/* My Events View Additions */
+.my-events-table-wrapper {
+    background: transparent;
+}
+table.events-community.my-events {
+    width: 100%;
+}
+thead#my-events-display-headers {
+    background: #3f3f3f;
+    color: #fff;
+    line-height: 30px;
+}
+table.events-community.my-events td {
+    padding: 15px 8px;
+    font-size: 13px;
+}
+table.events-community.my-events td a {
+    font-weight: normal;
+}
+table.events-community.my-events td a.button {
+    margin: 3px;
+    padding: 4px 8px;
+    font-size: 11px;
+}
+
+/* Add Events */
+#tribe-community-events .events-community-post-title input {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 17px;
+    line-height: 21px;
+}
+#tribe-community-events .events-community-post-title input,
+#tribe-community-events .events-community-post-content textarea {
+    width: 100%;
+}
+
+/* Events Widget */
+
+ol.tribe-list-widget {
+    padding: 0;
+    font-size: 13px;
+}
+.widget h4.tribe-event-title {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* WC Vendors Additions */
 
 /* WooCommerce Loop WC Vendor Additions */
@@ -3048,7 +3092,7 @@ ul.wcv_vendorslist div {
 }
 
 .wcv-navigation ul.menu.black li.active {
-    background: #333;
+    background: #3f3f3f;
 }
 .wcv-shade.visible,
 .wcv-modal.visible {
@@ -3064,72 +3108,17 @@ ul.wcv_vendorslist div {
 
 
 
-/* The Events Calendar by Modern Tribe - CSS Additions */
 
-/* Event Calendar Additions */
-.tribe_community_edit .ui-datepicker .ui-datepicker-title {
-  color: #888;
-}
-.tribe_community_edit .ui-datepicker .ui-datepicker-header {
-  margin-bottom: 10px;
-}
-#tribe-events-content a.tribe_paged {
-    background: transparent;
-}
-@media (min-width: 768px) {
-  .tribe-bar-collapse .tribe-bar-filters-inner > div {
-      width: 25%;
-  }
-}
 
-/* My Events View Additions */
-.my-events-table-wrapper {
-    background: transparent;
-}
-table.events-community.my-events {
-    width: 100%;
-}
-thead#my-events-display-headers {
-    background: #3f3f3f;
-    color: #fff;
-    line-height: 30px;
-}
-table.events-community.my-events td {
-    padding: 15px 8px;
-    font-size: 13px;
-}
-table.events-community.my-events td a {
-    font-weight: normal;
-}
-table.events-community.my-events td a.button {
-    margin: 3px;
-    padding: 4px 8px;
-    font-size: 11px;
-}
 
-/* Add Events */
-#tribe-community-events .events-community-post-title input {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    font-size: 17px;
-    line-height: 21px;
-}
-#tribe-community-events .events-community-post-title input,
-#tribe-community-events .events-community-post-content textarea {
-    width: 100%;
-}
 
-/* Events Widget */
 
-ol.tribe-list-widget {
-    padding: 0;
-    font-size: 13px;
-}
-.widget h4.tribe-event-title {
-    font-size: 15px;
-    line-height: 1.5;
-}
+
+
+
+
+
+
 
 
 
@@ -3264,104 +3253,22 @@ ol.tribe-list-widget {
     font-size: 17px;
   }
 }
-
-
-/* User Home Dashboard - WC Vendors Related */
-
-.page-template-tk-dashboard .wcv_recent_orders,
-.page-template-tk-dashboard .wcv_dashboard_datepicker,
-.page-template-tk-dashboard .wcv-grid nav.wcv-navigation {
-    display: none;
+.tk-homedash-toplinks a {
+  font-size: 15px;
+  color: inherit;
+  text-decoration: none;
+  margin-right: 20px;
 }
-.page-template-tk-dashboard .wcv-grid {
-    font-size: 14px;
-}
-.page-template-tk-dashboard .wcv-grid h3 {
-    font-size: 19px;
-}
-.page-template-tk-dashboard .wcv-horizontal-gutters {
-  margin: 20px 0;
-}
-.page-template-tk-dashboard .wcv-navigation ul.menu.black li.active {
-    background: transparent;
-}
-.page-template-tk-dashboard .wcv-navigation ul.menu.black li a {
-  font-weight: normal;
-  border-radius: 0;
-}
-.page-template-tk-dashboard .wcv-navigation ul.menu.black li a:hover {
-    background: #eee;
-    color: #3f3f3f;
-}
-.page-template-tk-dashboard .wcv-navigation ul.menu.black {
-    background: #fbfbfb;
-    padding: 0 5px;
-    border: 1px solid #ddd;
-    border-radius: 0;
-}
-.page-template-tk-dashboard .wcv-navigation ul.menu.black li a {
-    color: #777;
-    text-decoration: none;
+.tk-homedash-toplinks a span {
+  padding: 1px 4px;
+  background: #eee;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-left: 2px;
 }
 
 
-
-
-
-
-
-
-
-
-/* Miscallenous */
-
-/* Input Tweak */
-.form-control {
-    border-radius: 0;
-    padding: 10px 25px;
-    font-size: 21px;
-    height: auto;
-}
-
-/* Disable scrollbar on Chrome and Safari browsers! */
-html::-webkit-scrollbar { width: 0 !important }
-
-/* user switch */
-#buddypress #user_switching_switch_to a {
-    background: transparent;
-    border: none;
-    color: inherit;
-    font-size: 12px;
-    padding: 0;
-		text-shadow: none;
-}
-#buddypress #user_switching_switch_to a:hover,
-#buddypress #user_switching_switch_to a:focus {
-    background: transparent;
-    padding: 0;
-    border: none;
-    color: inherit;
-		text-decoration: underline;
-    text-shadow: none;
-    font-size: 12px;
-}
-.bp-user.xprofile div#user_switching_switch_to {
-		position: absolute;
-		top: 15px;
-    right: 15px;
-}
-.bp-user.xprofile #buddypress #item-header div#user_switching_switch_to a {
-    background: #3f3f3f;
-    padding: 3px 8px;
-}
-@media (min-width: 768px) {
-	.bp-user.xprofile div#user_switching_switch_to {
-			top: 70px;
-	}
-}
-
-
-/* Homepage USER DASHBOARD - sidebar */
+/* Dashboard Sidebar */
 .af-dashboard-avatar {
     margin: 4px 20px 10px 0;
     width: 50px;
@@ -3398,23 +3305,7 @@ p.profile-action-mini a .fa {
     margin: 10px 0;
 }
 
-/* Homepage USER DASHBOARD - main */
-
-.tk-homedash-toplinks a {
-  font-size: 15px;
-  color: inherit;
-  text-decoration: none;
-  margin-right: 20px;
-}
-.tk-homedash-toplinks a span {
-  padding: 1px 4px;
-  background: #eee;
-  border: 1px solid #eee;
-  border-radius: 5px;
-  margin-left: 2px;
-}
-
-/* mobile animated modal for settings and edit profile view */
+/* Dashboard - Mobile: animated modal for settings and edit profile view */
 .animwrap {
   display: inline-block;
   width: 100%;
@@ -3432,25 +3323,40 @@ p.profile-action-mini a .fa {
   overflow: hidden;
 }
 
+/* Dashboard - WC Vendors Related */
 
-
-
-/* Search Fixes */
-
-.search .results-group {
-  overflow: auto;
+.page-template-tk-dashboard .wcv_recent_orders,
+.page-template-tk-dashboard .wcv_dashboard_datepicker,
+.page-template-tk-dashboard .wcv-grid nav.wcv-navigation {
+    display: none;
 }
-.search .results-group .entry-summary {
-    height: auto;
+.page-template-tk-dashboard .wcv-grid {
+    font-size: 14px;
 }
-.search #buddypress ul.item-list li {
-    border: none;
-    overflow: auto;
+.page-template-tk-dashboard .wcv-grid h3 {
+    font-size: 19px;
 }
-.search #buddypress ul.item-list li div.action {
-  display: none;
+.page-template-tk-dashboard .wcv-horizontal-gutters {
+  margin: 20px 0;
 }
-
-.border-top {
-  border-top: 1px solid #e1e1e1;
+.page-template-tk-dashboard .wcv-navigation ul.menu.black li.active {
+    background: transparent;
+}
+.page-template-tk-dashboard .wcv-navigation ul.menu.black li a {
+  font-weight: normal;
+  border-radius: 0;
+}
+.page-template-tk-dashboard .wcv-navigation ul.menu.black li a:hover {
+    background: #eee;
+    color: #3f3f3f;
+}
+.page-template-tk-dashboard .wcv-navigation ul.menu.black {
+    background: #fbfbfb;
+    padding: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+.page-template-tk-dashboard .wcv-navigation ul.menu.black li a {
+    color: #777;
+    text-decoration: none;
 }
