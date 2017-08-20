@@ -153,11 +153,26 @@ function larry_customizer( $wp_customize ) {
 		$wp_customize->add_setting( 'larry_wc_loop_hide_cart_buttons', array(
 			'capability' 				=> 'edit_theme_options',
 			'transport'         => 'refresh',
+			'default' 					=> false
 		) );
 
 		$wp_customize->add_control( 'larry_wc_loop_hide_cart_buttons', array(
 			'label'             => __('Hide add-to-cart buttons in shop loop?', 'larry'),
 			// 'description'       => __('Hide add-to-cart buttons in category views?', 'larry'),
+			'section'           => 'larry_wc',
+			'type'              => 'checkbox',
+			'priority'		      => 40
+		) );
+
+
+		$wp_customize->add_setting( 'larry_wc_loop_hide_catalog_ordering', array(
+			'capability' 				=> 'edit_theme_options',
+			'transport'         => 'refresh',
+			'default' 					=> false
+		) );
+
+		$wp_customize->add_control( 'larry_wc_loop_hide_catalog_ordering', array(
+			'label'             => __('Hide catalog ordering in shop loop?', 'larry'),
 			'section'           => 'larry_wc',
 			'type'              => 'checkbox',
 			'priority'		      => 40
@@ -183,7 +198,8 @@ function larry_customizer( $wp_customize ) {
 			)
 		);
 
-		// Admin Bar
+
+		// BP dropdown in top nav
 
 		$wp_customize->add_setting( 'larry_bp_hide_top_nav_bp_dropdown', array(
 			'capability' 				=> 'edit_theme_options',
@@ -191,12 +207,56 @@ function larry_customizer( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( 'larry_bp_hide_top_nav_bp_dropdown', array(
-			'label'             => __('BP dropdown in top nav', 'larry'),
-			'description'       => __('Hide  BP profile dropdown nav in top menu?', 'larry'),
+			'label'             => __('BP profile dropdown', 'larry'),
+			'description'       => __('Hide BP profile dropdown nav in top menu?', 'larry'),
 			'section'           => 'larry_bp',
 			'type'              => 'checkbox',
-			'priority'		      => 14
+			'priority'		      => 10
 		) );
+
+
+
+		// BP notifications icon in top menu
+
+		if ( bp_is_active( 'notifications' ) ) {
+
+			$wp_customize->add_setting( 'larry_bp_hide_top_nav_notifications', array(
+				'capability' 				=> 'edit_theme_options',
+				'transport'         => 'refresh',
+			) );
+
+			$wp_customize->add_control( 'larry_bp_hide_top_nav_notifications', array(
+				'label'             => __('BP notifications icon', 'larry'),
+				'description'       => __('Hide BP notifications icon in top menu?', 'larry'),
+				'section'           => 'larry_bp',
+				'type'              => 'checkbox',
+				'priority'		      => 20
+			) );
+
+		}
+
+
+		// BP messages
+
+		if ( bp_is_active( 'messages' ) ) {
+
+			$wp_customize->add_setting( 'larry_bp_hide_top_nav_messages', array(
+				'capability' 				=> 'edit_theme_options',
+				'transport'         => 'refresh',
+			) );
+
+			$wp_customize->add_control( 'larry_bp_hide_top_nav_messages', array(
+				'label'             => __('BP messages icon', 'larry'),
+				'description'       => __('Hide BP messages icon in top menu?', 'larry'),
+				'section'           => 'larry_bp',
+				'type'              => 'checkbox',
+				'priority'		      => 30
+			) );
+
+		}
+
+
+
 
 	}
 

@@ -113,7 +113,7 @@
 
 								<?php global $bp; ?>
 
-								<?php if ( bp_is_active( 'messages' ) ) { ?>
+								<?php if ( bp_is_active( 'messages' ) && get_theme_mod( 'larry_bp_hide_top_nav_messages' ) != true ) { ?>
 									<li class="tk-messages-li">
 										<a class="tk-messages <?php if ( messages_get_unread_count() > 0 ) { echo ' new '; } ?>" href="<?php bp_loggedin_user_link(); ?>messages">
 											<i class="fa fa-comment"></i>
@@ -122,7 +122,7 @@
 									</li>
 								<?php } ?>
 
-								<?php if ( bp_is_active( 'notifications' ) ) { ?>
+								<?php if ( bp_is_active( 'notifications' ) && get_theme_mod( 'larry_bp_hide_top_nav_notifications' ) != true ) { ?>
 								<li class="tk-notifications-li">
 									<a class="tk-notifications <?php if ( bp_has_notifications() ) { echo ' new '; } ?>" href="<?php bp_loggedin_user_link(); ?>notifications">
 										<i class="fa fa-bell"></i>
@@ -151,7 +151,7 @@
 							<?php } ?>
 
 
-							<?php if ( class_exists( 'BuddyPress' ) && is_user_logged_in() ) { ?>
+							<?php if ( class_exists( 'BuddyPress' ) && is_user_logged_in() && get_theme_mod( 'larry_bp_hide_top_nav_bp_dropdown' ) != true ) { ?>
 
 								<li class="tk-profile-li menu-item-has-children dropdown">
 									<a class="tk-profile dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true">

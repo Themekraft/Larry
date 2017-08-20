@@ -310,8 +310,11 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
 
     // Product Categories
-    // remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-    // remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+		if ( get_theme_mod( 'larry_wc_loop_hide_catalog_ordering' ) != true ):
+    	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+		endif;
 
     // Breadcrumbs
     // remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
