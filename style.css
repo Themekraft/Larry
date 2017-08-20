@@ -1301,6 +1301,9 @@ form.comment-form input#url {
 #footer a {
 	font-weight: normal;
 }
+#footer-full-width {
+	padding: 0 0 60px;	
+}
 #footer .footer-columns {
 	margin-bottom: 0;
 	padding-bottom: 40px;
