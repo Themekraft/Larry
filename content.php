@@ -6,6 +6,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php if ( is_sticky() ) { ?>
+		<div class="larry-sticky-pin">
+			<i class="fa fa-bolt"></i>
+			<i class="larry-sticky-triangle"></i>
+		</div>
+	<?php } ?>
+
 	<div class="row">
 		<?php if ( has_post_thumbnail() ) { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark" title="Read more">
