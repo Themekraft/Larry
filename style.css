@@ -1091,6 +1091,11 @@ display: block;
 
 
 /* Post List View - 2 and 3 Columns clearing */
+@media (min-width: 660px) and (max-width: 767px) {
+	.tk-content-col.col-xs-12 {
+		width: 50%;
+	}
+}
 .tk-content-2-col:nth-child(2n+1) {
 	clear: left;
 }
@@ -1236,6 +1241,8 @@ a .entry-content-thumbnail:hover {
 }
 .blog .entry-content-thumbnail img {
 	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
 }
 .single-post .main-content .entry-content-thumbnail img {
 	margin-bottom: 10px;
