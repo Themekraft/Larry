@@ -62,6 +62,9 @@ The Larry theme on Github - https://github.com/Themekraft/larry/
 
 /* Globals */
 
+html {
+    background: #fbfbfb;
+}
 body {
 	word-wrap: break-word;
 	color: #3f3f3f;
