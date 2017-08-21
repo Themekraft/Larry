@@ -152,7 +152,6 @@ function larry_customizer( $wp_customize ) {
 		'section' 	=> 'larry_blog',
 		'priority' 	=> 10,
 		'label' 		=> __( 'Display sidebars', 'larry' ),
-		// 'description' 	=> __( 'Options for a smooth checkout process.', 'larry' )
 	) ) );
 
 

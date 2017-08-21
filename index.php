@@ -23,14 +23,14 @@ get_header(); ?>
 
           <div class="row">
 
-            <?php /* Start the Loop */ ?>
-            <?php while ( have_posts() ) : the_post(); ?>
+              <?php /* Start the Loop */ ?>
+              <?php while ( have_posts() ) : the_post(); ?>
 
-                  <?php get_template_part( blog_template_style(), get_post_format() ); ?>
+                    <?php get_template_part( blog_template_style(), get_post_format() ); ?>
 
-            <?php endwhile; ?>
+              <?php endwhile; ?>
 
-              <?php _tk_content_nav( 'nav-below' ); ?>
+            <?php _tk_content_nav( 'nav-below' ); ?>
 
           </div>
 
