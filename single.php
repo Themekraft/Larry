@@ -12,7 +12,17 @@ get_header(); ?>
   <div class="container">
     <div class="row">
 
-			<div id="content" class="main-content-inner col-xs-12 <?php if ( get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
+      <?php
+
+        $add_classes = '';
+
+        if ( !is_single('post') || is_single('post') && get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) :
+          $add_classes = 'col-md-8';
+        endif;
+
+      ?>
+
+			<div id="content" class="main-content-inner col-xs-12 <?php echo $add_classes; ?>">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -37,8 +47,9 @@ get_header(); ?>
 
       </div>
 
-<?php if ( get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) : ?>
+<?php if ( !is_single('post') || is_single('post') && get_theme_mod( 'larry_blog_single_post_sidebars' ) == true ) : ?>
   <?php get_sidebar(); ?>
 <?php endif; ?>
+
 
 <?php get_footer(); ?>

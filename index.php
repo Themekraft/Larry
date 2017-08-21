@@ -17,7 +17,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
 
-			<div id="content" class="main-content-inner col-xs-12  <?php if ( get_theme_mod( 'larry_blog_archive_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
+			<div id="content" class="main-content-inner col-xs-12 <?php if ( get_theme_mod( 'larry_blog_archive_sidebars' ) == true ) { echo 'col-md-8'; } ?>">
 
 				<?php if ( have_posts() ) : ?>
 

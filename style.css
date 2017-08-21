@@ -3223,6 +3223,15 @@ ul.wcv_vendorslist div {
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 }
+.llms-lesson-preview {
+    display: block;
+    width: 100%;
+}
+.llms-lesson-preview .llms-extra {
+    min-width: 75px;
+    float: right;
+    text-align: right;
+}
 
 /* LifterLMS Single Lesson */
 .single-lesson nav#nav-below {
