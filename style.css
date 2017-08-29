@@ -1787,11 +1787,25 @@ table.shop_table.shop_table_responsive.my_account_orders {
 
 /* WooCommerce Widgets */
 
+
+.woocommerce.widget_shopping_cart {
+    padding: 0 15px 5px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.woocommerce ul.cart_list li a,
+.woocommerce ul.product_list_widget li a {
+    color: inherit;
+}
+
 .woocommerce.widget .quantity {
     font-size: 13px;
     padding: 4px 12px 12px;
     display: block;
 }
+
 
 .woocommerce .widget_shopping_cart .cart_list li a.remove,
 .woocommerce.widget_shopping_cart .cart_list li a.remove {
@@ -2907,6 +2921,9 @@ a.bp-title-button {
 /* BuddyPress Widgets */
 
 /* Member Widget */
+.buddypress.widget .avatar-block {
+    padding: 0 15px;
+}
 .buddypress.widget #members-list .item-avatar {
     float: left;
 }
@@ -2921,6 +2938,7 @@ a.bp-title-button {
 .buddypress.widget #members-list .item-title a:focus {
     background: transparent;
 }
+
 
 
 
