@@ -47,8 +47,6 @@ do_action( 'bp_before_member_header' ); ?>
 				 */
 				do_action( 'bp_member_header_actions' ); ?></div><!-- #item-buttons -->
 
-			<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
-
 
 
       <div class="before-meta-wrap">

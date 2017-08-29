@@ -65,8 +65,6 @@ do_action( 'bp_before_members_loop' ); ?>
 
 						<?php do_action( 'tk_member_loop_after_username' ); ?>
 
-						<div class="item-meta"><span class="activity"><?php bp_member_last_active(); ?></span></div>
-
 						<?php
 
 						/**

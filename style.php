@@ -38,6 +38,11 @@ function larry_add_customizer_CSS() {
       .llms-next-lesson .llms-lesson-preview .llms-lesson-link {
         background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
       }
+      /* BuddyPress Member Profile Header BG Color */
+      #buddypress #header-cover-image {
+        background-color: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+      }
+
 
 
       /* Link Hover Color */

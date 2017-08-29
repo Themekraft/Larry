@@ -128,8 +128,8 @@ a:focus {
 	color: #039bb4;  /* #47a8af; */
 	text-decoration: underline;
 }
-.widgetarea ul li a,
-.sidebar ul li a,
+.widgetarea ul.nav li a,
+.sidebar ul.nav li a,
 .nav li a,
 .nav li a:hover,
 .nav li a:focus {
@@ -137,27 +137,27 @@ a:focus {
 	text-decoration: none;
 	display: inline-block;
 }
-.sidebar ul li a {
+.sidebar ul.nav li a {
 	color: inherit;
   margin-bottom: 1px;
   padding: 10px;
   width: 100%;
 }
-.sidebar ul li a:hover,
-.sidebar ul li a:focus {
+.sidebar ul.nav li a:hover,
+.sidebar ul.nav li a:focus {
 	background: #f4f4f4;
 	color: inherit;
 }
-.sidebar .current-menu-item a,
-.sidebar ul li.current-menu-item a:hover,
-.sidebar ul li.current-menu-item a:focus {
+.sidebar ul.nav li.current-menu-item a,
+.sidebar ul.nav li.current-menu-item a:hover,
+.sidebar ul.nav li.current-menu-item a:focus {
 	background: #f4f4f4;
 }
-.sidebar .current-menu-item a {
+.sidebar ul.nav .current-menu-item a {
     font-weight: bold !important;
 }
-.widgetarea ul,
-.sidebar ul {
+.widgetarea ul.nav,
+.sidebar ul.nav {
     list-style: none outside none;
     padding: 0;
 }
@@ -1096,7 +1096,7 @@ display: block;
 		width: 50%;
 	}
 }
-.tk-content-2-col:nth-child(2n+1) {
+.tk-content-col:nth-child(2n+1) {
 	clear: left;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1107,6 +1107,9 @@ display: block;
 @media (min-width: 992px) {
 	.tk-content-3-col:nth-child(3n+1) {
 		clear: left;
+	}
+  .tk-content-3-col:nth-child(2n+1) {
+		clear: none;
 	}
 }
 .cat-links {
@@ -1782,6 +1785,20 @@ table.shop_table.shop_table_responsive.my_account_orders {
     min-width: 170px;
 }
 
+/* WooCommerce Widgets */
+
+.woocommerce.widget .quantity {
+    font-size: 13px;
+    padding: 4px 12px 12px;
+    display: block;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li a.remove,
+.woocommerce.widget_shopping_cart .cart_list li a.remove {
+    padding: 1px;
+}
+
+
 /* WooCommerce Purchase History - BuddyPress specific */
 #buddypress tr.order td a.button {
     padding: 3px 7px !important;
@@ -2185,6 +2202,10 @@ img.avatar {
 }
 .front-page #af-welcome-card-main {
 	display: block;
+}
+
+#buddypress #header-cover-image {
+  background-color: #09b1cc;
 }
 
 
@@ -2767,6 +2788,7 @@ form#notifications-sort-order {
 #buddypress ul#members-list li div.item-title {
     width: auto;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 #buddypress ul#members-list li div.action {
     position: relative;
@@ -3514,4 +3536,19 @@ p.profile-action-mini a .fa {
 .page-template-tk-dashboard .wcv-navigation ul.menu.black li a {
     color: #777;
     text-decoration: none;
+}
+
+
+/* Font Awesome 4 Menus Additions */
+
+.nav .fontawesome-text {
+    margin-left: 5px;
+}
+
+/* User Switching */
+#user_switching_switch_to a {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    text-shadow: none !important;
 }
