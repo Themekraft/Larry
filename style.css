@@ -1378,9 +1378,12 @@ form.comment-form input#url {
 	margin-bottom: 0;
 	padding-bottom: 40px;
 }
+.footer-columns .widget {
+  padding: 0 15px;
+}
 #footer .footer-columns .widget-title {
   font-size: 21px;
-  padding: 15px;
+  padding: 15px 0;
 }
 #footer .footer-columns .menu {
 	padding: 0;
@@ -1389,6 +1392,7 @@ form.comment-form input#url {
 #footer .footer-columns .menu>li {
 	/*padding: 0;*/
 	list-style: none;
+  margin: 0 -15px;
 }
 #footer .footer-columns ul>li>a,
 #footer .footer-columns .menu>li>a,
@@ -2921,9 +2925,6 @@ a.bp-title-button {
 /* BuddyPress Widgets */
 
 /* Member Widget */
-.buddypress.widget .avatar-block {
-    padding: 0 15px;
-}
 .buddypress.widget #members-list .item-avatar {
     float: left;
 }
