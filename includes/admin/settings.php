@@ -32,6 +32,7 @@ function larry_screen() { ?>
 						<h3 class="larry-subtitle">First Step</h3>
 						<p><a class="button button-primary button-larry" href="<?php echo admin_url(); ?>customize.php" style=""><i class="dashicons dashicons-admin-appearance"></i> &nbsp; Customize Your Site</a></p>
 						<!-- <p class="hide-if-no-customize">or <a href="http://localhost:8888/testing/wp-admin/themes.php">change your theme completely</a></p> -->
+						<p style="margin-bottom: 20px; font-style: italic; color: #888;"><small>Go through the customizer options, <br>from top to bottom.</small></p>
 					</div>
 					<div class="larry-col-small">
 						<h3 class="larry-subtitle">Customize More</h3>

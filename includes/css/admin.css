@@ -35,9 +35,13 @@
   .larry-col-small,
   .larry-col-big {
     float: left;
-    padding: 15px 10px;
+    padding: 10px;
     min-height: 120px;
     box-sizing: border-box;
+  }
+  .first .larry-col-small,
+  .first .larry-col-big {
+    padding-top: 0;
   }
   .larry-col-small {
     width: 25%;
@@ -59,7 +63,7 @@
     margin: 0 0;
   }
   .first .larry-subtitle {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .larry-lead {
     margin-bottom: 10px;
