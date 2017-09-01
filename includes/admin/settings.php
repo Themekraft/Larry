@@ -34,19 +34,19 @@ function larry_screen() { ?>
 						<!-- <p class="hide-if-no-customize">or <a href="http://localhost:8888/testing/wp-admin/themes.php">change your theme completely</a></p> -->
 						<p style="margin-bottom: 20px; font-style: italic; color: #888;"><small>Go through the customizer options, <br>from top to bottom.</small></p>
 					</div>
-					<div class="larry-col-small">
+					<!-- <div class="larry-col-small">
 						<h3 class="larry-subtitle">Customize More</h3>
 						<p><a href="#" class="">Minor design changes</a></p>
 						<p><a href="#" class="">Creating a child theme</a></p>
 						<p><a href="#" class="">Recommended plugins</a></p>
 						<p><a href="#" class="">More helpful guides</a></p>
+					</div> -->
 
 						<!-- <h3>Helpful Guides</h3>
 						<p><a href="#" class="">Simple WordPress Site</a></p>
 						<p><a href="#" class="">BuddyPress Site</a></p>
 						<p><a href="#" class="">WooCommerce Store</a></p>
 						<p><a href="#" class="">BuddyPress &amp; WooCommerce</a></p> -->
-					</div>
 					<div class="larry-col-big">
 						<h3 class="larry-subtitle">Need Help?</h3>
 						<p><a class="button xbutton-primary button-larry" href="#" style=""><i class="dashicons dashicons-search"></i> &nbsp; View Documentation</a>
