@@ -38,9 +38,6 @@ function tk_larry_fs() {
 					'slug' => 'themes.php',
 				),
 			),
-			// Set the SDK to work in a sandbox mode (for development & testing).
-			// IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
-			'secret_key'          => 'sk_:a.JriLtpYkF5:o2?)m+1IxUX=h;q',
 		) );
 	}
 
