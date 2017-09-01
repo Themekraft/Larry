@@ -2022,6 +2022,7 @@ img.avatar {
     color: #b4b4b4;
     text-shadow: none;
 		transition: none;
+    height: 32px;
 }
 .bp_group #buddypress #members_search_submit:hover,
 #buddypress .dir-search input[type="submit"]:hover {
@@ -2764,6 +2765,7 @@ form#notifications-sort-order {
 		transition: all 0.15s ease-in;
 		background: #fff;
 		width: 150px;
+    height: 32px;
 		margin-bottom: 1em;
 }
 #buddypress div.dir-search input[type=text]:focus,
@@ -2775,7 +2777,7 @@ form#notifications-sort-order {
     border-bottom: 1px solid #eaeaea;
     overflow: auto;
     margin: 20px 0 0;
-    padding: 20px 0 0;
+    padding: 40px 0 0;
 }
 #buddypress ul#members-list li {
     display: inline;
@@ -2786,7 +2788,7 @@ form#notifications-sort-order {
 		width: 150px;
     text-align: center;
 		padding: 0 0 30px;
-		min-height: 275px;
+		min-height: 250px;
 }
 @media (min-width: 768px) {
 	.member-loop-grid-item {
@@ -3300,11 +3302,24 @@ ul.wcv_vendorslist div {
     float: right;
     text-align: right;
 }
+.course .llms-meta-info {
+    font-size: 13px;
+}
+.course .llms-meta-info .llms-meta-title {
+    margin: 20px 0 5px;
+    font-size: 19px;
+}
+.course .llms-course-progress {
+    max-width: 100%;
+    margin: 50px 0;
+}
 
 /* LifterLMS Single Lesson */
 .single-lesson nav#nav-below {
 	display: none;
 }
+
+
 
 
 
