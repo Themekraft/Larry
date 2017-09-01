@@ -69,18 +69,10 @@
     margin-bottom: 10px;
   }
 }
-/*@media (min-width: 768px) {
-  .larry-panel-column {
-    width: 25%;
-  }
-}*/
-
 
 .larry-panel .larry-start-title {
     margin: 10px 0;
 }
-
-
 
 .button.button-larry {
   height: auto;
@@ -89,12 +81,12 @@
 }
 
 
-/* interrim hide */
+/* freemius bug - quick interrim hide */
 
 h2.nav-tab-wrapper {
     display: none !important;
 }
 
-.fs-sub.larry-theme.addons, .fs-sub.larry-theme.pricing {
+.fs-sub.larry-theme.addons {
     display: none;
 }
