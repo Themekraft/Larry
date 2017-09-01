@@ -14,47 +14,78 @@ function larry_admin_menu() {
  */
 
 function larry_screen() { ?>
+	<!-- <div id="icon-themes" class="icon32"><br></div> -->
+
+	<!-- <h2 class="">Larry Settings</h2> -->
+
+
 	<div class="wrap">
-	<div id="icon-themes" class="icon32"><br></div>
-	<h2>Larry is here</h2>
-
-        <a href="#" title="Meet Larry"><img src="http://themekraft.com/wp-content/uploads/2017/08/meet-larry-1024x768.jpg" alt="" width="750" height="563" class="alignnone size-large wp-image-19117" /></a>
-
-        <img src="http://themekraft.com/wp-content/uploads/2017/08/larry-logos.jpg" alt="" width="1630" height="100" class="alignnone size-full wp-image-19118" />
-        &nbsp;
-
-        <h3>A clean and lightweight WordPress theme. </h3>
-
-        Works perfect with BuddyPress, WooCommerce and LifterLMS.
-
-        &nbsp;
-
-        But let's check out the demo:
-
-        &nbsp;
 
 
-        <h1>See The Demo</h1>
 
-        <p style="margin-bottom: 30px;">There are two demo sites:</p>
+		<h3 class="larry-start-title">Larry is ready!</h3>
+		<p class="larry-intro">Let's get you started.</p>
+		<div class="larry-panel first">
+			<div class="larry-panel-content">
+				<div class="larry-panel-column-container">
+					<div class="larry-col-small">
+						<h3 class="larry-subtitle">First Step</h3>
+						<p><a class="button button-primary button-larry" href="/wp-admin/customize.php" style=""><i class="dashicons dashicons-admin-appearance"></i> &nbsp; Customize Your Site</a></p>
+						<!-- <p class="hide-if-no-customize">or <a href="http://localhost:8888/testing/wp-admin/themes.php">change your theme completely</a></p> -->
+					</div>
+					<div class="larry-col-small">
+						<h3 class="larry-subtitle">Customize More</h3>
+						<p><a href="#" class="">Create a child theme</a></p>
+						<p><a href="#" class="">Use as starter theme</a></p>
+						<p><a href="#" class="">Recommended plugins</a></p>
 
-        <h3>Minimal setup - just WordPress</h3>
+						<!-- <h3>Helpful Guides</h3>
+						<p><a href="#" class="">Simple WordPress Site</a></p>
+						<p><a href="#" class="">BuddyPress Site</a></p>
+						<p><a href="#" class="">WooCommerce Store</a></p>
+						<p><a href="#" class="">BuddyPress &amp; WooCommerce</a></p> -->
+					</div>
+					<div class="larry-col-big">
+						<h3 class="larry-subtitle">Need Help?</h3>
+						<p><a class="button xbutton-primary button-larry" href="#" style=""><i class="dashicons dashicons-admin-page"></i> &nbsp; View Documentation</a>
+						<!-- </p>
+						<p> -->
+							<a class="button xbutton-primary button-larry" href="#" style=""><i class="dashicons dashicons-email"></i> &nbsp; Ask Support</a></p>
 
-        <a href="/larry-demo/" title="View Larry's Minimal Demo" target="_blank"><img src="http://themekraft.com/wp-content/uploads/edd/2017/08/screenshot-blog-1-1024x574.jpg" alt="" width="750" height="420" class="alignnone size-large wp-image-19057" style="max-width: 600px; box-shadow: 0 0 2px rgba(0,0,0,0.3);" /></a>
+					</div>
+				</div>
 
-        <a href="/larry-demo/" class="btn xbtn-large xbtn-primary" title="View Larry's Minimal Demo" target="_blank"><i class="fa fa-arrow-circle-right"></i> &nbsp; View The Minimal Demo</a>
+			</div>
+
+		</div>
 
 
-        &nbsp;
 
-        <h3>Full setup - with WooCommerce and BuddyPress</h3>
 
-        <a href="/larry-demo-full" title="View Larry's Full Demo" target="_blank"><img src="http://themekraft.com/wp-content/uploads/2017/08/larry-screenshot-woocommerce-shop-1024x569.jpg" alt="" width="750" height="417" class="alignnone size-large wp-image-19095" style="max-width: 600px; box-shadow: 0 0 2px rgba(0,0,0,0.3);" /></a>
 
-        <a href="/larry-demo-full/" class="btn xbtn-large xbtn-primary" title="View Larry's Full Demo" target="_blank"><i class="fa fa-arrow-circle-right"></i> &nbsp; View The Full Demo</a>
-        &nbsp;
-        &nbsp;
-        
+
+
+		<div class="larry-panel">
+			<div class="larry-panel-content">
+
+				<h3 class="larry-subtitle">See Demo Sites</h3>
+				<div class="larry-panel-column-container">
+					<div class="larry-col-small">
+						<p class="larry-lead">A Simple WordPress Demo:</p>
+						<!-- <p>See a minimal demo - just a WordPress install</p> -->
+		        <p><a href="https://themekraft.com/larry-demo/" class="button button-primary button-larry" title="View Larry's Minimal Demo" target="_blank">View Simple Demo</a></p>
+					</div>
+
+					<div class="larry-col-big">
+		        <p class="larry-lead">WooCommerce &amp; BuddyPress Demo:</p>
+						<!-- <p>See the demo site with WooCommerce and BuddyPress</p> -->
+		        <p><a href="https://themekraft.com/larry-demo-full/" class="button button-primary button-larry" title="View Larry's Full Demo" target="_blank">View Full Demo</a></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 
 
 

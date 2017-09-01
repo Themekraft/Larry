@@ -9,3 +9,77 @@
     position: relative;
     margin-bottom: 15px;
 }
+
+
+/* Larry Theme Settings Page */
+
+.larry-panel {
+    position: relative;
+    overflow: auto;
+    margin: 16px 0;
+    padding: 23px 10px 0;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    background: #fff;
+    font-size: 13px;
+    line-height: 2.1em;
+}
+.larry-panel-content {
+    margin-left: 13px;
+}
+.larry-panel-column-container {
+  margin: 0 -10px;
+}
+@media (min-width: 992px) {
+  .larry-col-small,
+  .larry-col-big {
+    float: left;
+    padding: 15px 10px;
+    min-height: 120px;
+    box-sizing: border-box;
+  }
+  .larry-col-small {
+    width: 25%;
+  }
+  .larry-col-big {
+    width: 50%;
+  }
+  .larry-start-title {
+    font-size: 38px;
+    line-height: 1.4;
+    margin: 20px 0 0;
+  }
+  .larry-intro {
+    font-size: 17 px;
+    margin: 0 0 30px;
+  }
+  .larry-subtitle {
+    font-size: 23px;
+    margin: 0 0;
+  }
+  .first .larry-subtitle {
+    margin-bottom: 30px;
+  }
+  .larry-lead {
+    margin-bottom: 10px;
+  }
+}
+/*@media (min-width: 768px) {
+  .larry-panel-column {
+    width: 25%;
+  }
+}*/
+
+
+.larry-panel .larry-start-title {
+    margin: 10px 0;
+}
+
+
+
+.button.button-larry {
+  height: auto;
+  padding: 10px 20px;
+  line-height: 20px;
+}
