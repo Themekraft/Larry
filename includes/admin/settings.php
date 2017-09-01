@@ -30,14 +30,15 @@ function larry_screen() { ?>
 				<div class="larry-panel-column-container">
 					<div class="larry-col-small">
 						<h3 class="larry-subtitle">First Step</h3>
-						<p><a class="button button-primary button-larry" href="<?php echo home_url(); ?>/wp-admin/customize.php" style=""><i class="dashicons dashicons-admin-appearance"></i> &nbsp; Customize Your Site</a></p>
+						<p><a class="button button-primary button-larry" href="<?php echo admin_url(); ?>customize.php" style=""><i class="dashicons dashicons-admin-appearance"></i> &nbsp; Customize Your Site</a></p>
 						<!-- <p class="hide-if-no-customize">or <a href="http://localhost:8888/testing/wp-admin/themes.php">change your theme completely</a></p> -->
 					</div>
 					<div class="larry-col-small">
 						<h3 class="larry-subtitle">Customize More</h3>
-						<p><a href="#" class="">Create a child theme</a></p>
-						<p><a href="#" class="">Use as starter theme</a></p>
+						<p><a href="#" class="">Minor design changes</a></p>
+						<p><a href="#" class="">Creating a child theme</a></p>
 						<p><a href="#" class="">Recommended plugins</a></p>
+						<p><a href="#" class="">More helpful guides</a></p>
 
 						<!-- <h3>Helpful Guides</h3>
 						<p><a href="#" class="">Simple WordPress Site</a></p>
@@ -50,7 +51,7 @@ function larry_screen() { ?>
 						<p><a class="button xbutton-primary button-larry" href="#" style=""><i class="dashicons dashicons-search"></i> &nbsp; View Documentation</a>
 						<!-- </p>
 						<p> -->
-							<a class="button xbutton-primary button-larry" href="#" style=""><i class="dashicons dashicons-email-alt"></i> &nbsp; Ask Support</a></p>
+							<a class="button xbutton-primary button-larry" href="<?php echo admin_url(); ?>themes.php?page=larry-contact" style=""><i class="dashicons dashicons-email-alt"></i> &nbsp; Ask Support</a></p>
 
 					</div>
 				</div>
