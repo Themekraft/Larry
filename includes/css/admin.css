@@ -87,3 +87,10 @@
   padding: 10px 20px;
   line-height: 20px;
 }
+
+
+/* interrim hide */
+
+h2.nav-tab-wrapper {
+    display: none !important;
+}
