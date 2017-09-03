@@ -11,7 +11,14 @@
  * @package _tk
  */
 
-get_header(); ?>
+if (function_exists('get_header')) {
+	get_header();
+} else {
+	$url = "/";
+	header("Location: " . $url);
+	exit();
+} ?>
+
 
 <div class="main-content">
   <div class="container">
