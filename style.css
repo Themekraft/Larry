@@ -1774,9 +1774,11 @@ form.comment-form input#url {
 .woocommerce form .form-row input.input-text,
 .woocommerce form .form-row textarea {
     padding: 10px 25px;
-    background: #fff;
     border: 1px solid #ddd;
     font-size: 17px;
+}
+.woocommerce form .form-row .input-checkbox {
+  position: relative;
 }
 
 
@@ -2191,7 +2193,14 @@ img.avatar {
     /*background: #f9f9f9;
 		color: #727272;*/
 }
-.bp_group #buddypress div#item-header div#item-actions h3 {
+@media (max-width: 767px) {
+  .bp_group #buddypress div#item-header div#item-actions {
+      width: 100%;
+      margin: 20px 0;
+      text-align: right;
+  }
+}
+.bp_group #buddypress div#item-header div#item-actions h2 {
     font-size: 15px;
 		padding: 0;
 		margin: 0 0 10px;
