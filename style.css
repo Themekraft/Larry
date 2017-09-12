@@ -404,9 +404,25 @@ object {
 .form-control {
     border-radius: 0;
     padding: 10px 25px;
-    font-size: 21px;
+    font-size: 17px;
     height: auto;
+    background: #fff;
+    border: 1px solid #ddd;
 }
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  padding: 10px 25px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
 .panel {
 	border-radius: 0;
 }
@@ -1755,6 +1771,14 @@ form.comment-form input#url {
     min-width: 115px;
     padding: 6px;
 }
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea {
+    padding: 10px 25px;
+    background: #fff;
+    border: 1px solid #ddd;
+    font-size: 17px;
+}
+
 
 /* WooCommerce Purchase History */
 .my_account_orders tr.order td {
@@ -1765,25 +1789,29 @@ form.comment-form input#url {
 table.shop_table.shop_table_responsive.my_account_orders {
 	font-size: 12px;
 }
+
 @media (max-width: 767px) {
-/* note: woocommerce have a bug in their max width! they have set it to max-width 768px instead of 767px */
+/* note: woocommerce have set it to max-width 768px instead of 767px */
 	table.shop_table.shop_table_responsive.my_account_orders {
 		width: 75%;
 		min-width: 300px;
 		max-width: 100%;
 	}
 }
+
 @media (min-width: 768px) {
-/* note: woocommerce have a bug in their max width! they have set it to max-width 768px instead of 767px */
+/* note: woocommerce have set it to max-width 768px instead of 767px */
 	table.shop_table.shop_table_responsive.my_account_orders {
 		width: 100%;
 	}
 }
+
 @media (min-width: 992px) {
 	table.shop_table.shop_table_responsive.my_account_orders {
 		font-size: 15px;
 	}
 }
+
 .my_account_orders tr.order td.order-actions {
     padding: 0 0 15px 0;
     min-width: 170px;
@@ -2033,8 +2061,16 @@ img.avatar {
 @media (min-width: 768px) {
 	#buddypress div.item-list-tabs ul li a,
 	#buddypress div.item-list-tabs ul li span {
-		font-size: 15px;
+		font-size: 17px;
+    background: transparent;
+    padding-left: 0;
+    margin-bottom: 20px;
 	}
+  #buddypress div.item-list-tabs ul li.current a,
+  #buddypress div.item-list-tabs ul li.current span {
+    background: transparent;
+    font-weight: bold;
+  }
 }
 
 #buddypress div.item-list-tabs ul li a span {
@@ -2146,14 +2182,14 @@ img.avatar {
     border-bottom: 1px solid #ddd;
 }
 .bp_group #buddypress #item-nav ul li a {
-    padding: 20px 15px;
-		margin-right: 1px;
+    /*padding: 20px 15px;*/
+		/*margin-right: 1px;*/
 }
 .bp_group #buddypress #item-nav ul li a:hover,
 .bp_group #buddypress #item-nav ul li.current a,
 .bp_group #buddypress #item-nav ul li.selected a {
-    background: #f9f9f9;
-		color: #727272;
+    /*background: #f9f9f9;
+		color: #727272;*/
 }
 .bp_group #buddypress div#item-header div#item-actions h3 {
     font-size: 15px;
@@ -2181,6 +2217,19 @@ img.avatar {
 }
 
 
+/* Group Creation */
+
+.group-create .bp_group.hentry {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.group-create .bp_group .page-title {
+  padding: 20px 0;
+}
+.group-create #create-group-form fieldset {
+    margin: 0 0 50px;
+}
 
 /* BuddyPress Member Profiles */
 
@@ -2474,9 +2523,9 @@ body.buddypress.bp-default-cover div#item-header, .bp-default-cover #buddypress 
 .editfield input[type="search"],
 .editfield input[type="tel"] {
   width: 100%;
-  padding: 25px 15px;
+  /*padding: 15px 25px;*/
   background: #fff !important;
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
 }
 #buddypress .standard-form input[type=text] {
     width: 100%;
@@ -2834,6 +2883,8 @@ form#notifications-sort-order {
     color: #767676;
     font-size: 12px;
 }
+
+
 
 
 
