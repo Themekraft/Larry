@@ -237,7 +237,7 @@ function _tk_scripts() {
 
 
 }
-add_action( 'wp_enqueue_scripts', '_tk_scripts' );
+add_action( 'wp_enqueue_scripts', '_tk_scripts', 880 );
 
 
 // Add CSS to WP Admin

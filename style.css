@@ -4,7 +4,7 @@ Theme URI: https://github.com/Themekraft/larry
 Author: Konrad Sroka & Sven Lehnert
 Author URI: https://themekraft.com
 Description: A new age starter theme. Another tool by ThemeKraft.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3.0 /
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, custom-menu, editor-style, featured-images, translation-ready
@@ -2536,6 +2536,13 @@ body.buddypress.bp-default-cover div#item-header, .bp-default-cover #buddypress 
   background: #fff !important;
   /*border: 1px solid #ddd;*/
 }
+#buddypress #settings-form input.settings-input {
+    min-width: 250px;
+}
+#buddypress td.field-visibility {
+    min-width: 100px;
+}
+
 #buddypress .standard-form input[type=text] {
     width: 100%;
 }
@@ -3293,6 +3300,9 @@ ul.wcv_vendorslist div {
 	background: #09b1cc;
 	color: #fff;
 }
+.single-lesson .llms-next-lesson .llms-lesson-preview .llms-lesson-link p {
+  color: #fff;
+}
 .llms-button-action:hover,
 .llms-button-action:focus,
 .llms-next-lesson .llms-lesson-preview .llms-lesson-link:hover,
@@ -3504,6 +3514,12 @@ ul.wcv_vendorslist div {
 		overflow: auto;
     margin-bottom: 30px;
   }
+  .bp-user .af-home-welcome-card {
+      display: none;
+  }
+  .front-page .af-home-welcome-card {
+      display: block;
+  }
 }
 @media (min-width: 768px) {
   #af-home-sidebar #profile-sidebar {
@@ -3670,6 +3686,7 @@ p.profile-action-mini a .fa {
 .noscroll {
   overflow: hidden;
 }
+
 
 /* Dashboard - WC Vendors Related */
 
