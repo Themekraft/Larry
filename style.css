@@ -3410,6 +3410,7 @@ ul.wcv_vendorslist div {
 }
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-link {
     box-shadow: none;
+    border: none;
     border-top: 1px solid #ddd;
     background: transparent;
     padding: 10px;
@@ -3453,9 +3454,6 @@ ul.wcv_vendorslist div {
   }
   .llms-syllabus-wrapper .llms-lesson-preview .llms-extra+.llms-main {
     width: calc( 100% - 210px );
-  }
-  .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-excerpt {
-    margin-left: 155px;
   }
 }
 
