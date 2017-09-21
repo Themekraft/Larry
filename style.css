@@ -1133,7 +1133,7 @@ display: block;
 }
 .cat-links {
     float: left;
-    width: calc( 100% - 100px );
+    width: calc( 100% - 130px );
 }
 .single-post .cat-links {
     width: calc( 100% - 150px );
@@ -3305,6 +3305,7 @@ ul.wcv_vendorslist div {
 }
 .single-lesson .llms-next-lesson .llms-lesson-preview .llms-lesson-link p {
   color: #fff;
+  font-size: 13px;
 }
 .llms-button-action:hover,
 .llms-button-action:focus,
