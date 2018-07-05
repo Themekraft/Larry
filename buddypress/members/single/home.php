@@ -1,16 +1,14 @@
 <div id="buddypress">
 
-	<?php global $bp; // echo 'action:'.$bp->current_action; ?>
+	<?php global $bp; ?>
 
 	<?php if ( bp_is_my_profile() ) { ?>
-		<!-- <p id="back-to-dashboard"><a class="btn btn-primary btn-small" href="<?php echo home_url(); ?>" title="Take me home"><i class="fa fa-angle-left"></i> &nbsp;Dashboard</a></p> -->
 	<?php } ?>
 
 	<?php if ( $bp->current_component == 'profile' && $bp->current_action == 'public' ) { ?>
 
 		<div id="item-header" role="complementary">
 
-			<!-- <p id="publicprofilemsg"><i class="fa fa-info-circle"></i>&nbsp; This is your profile</p> -->
 
 			<?php
 			/**
@@ -63,7 +61,17 @@
 
 			<?php
 
-			if ( bp_is_user_activity() || !bp_current_component() ) :
+			/**
+			 * Fires before the display of member body content.
+			 *
+			 * @since 1.2.0
+			 */
+			do_action( 'bp_before_member_body' );
+
+			if ( bp_is_user_front() ) :
+				bp_displayed_user_front_template_part();
+
+			elseif ( bp_is_user_activity() ) :
 				bp_get_template_part( 'members/single/activity' );
 
 			elseif ( bp_is_user_blogs() ) :
@@ -81,9 +89,6 @@
 			elseif ( bp_is_user_profile() ) :
 				bp_get_template_part( 'members/single/profile'  );
 
-			elseif ( bp_is_user_forums() ) :
-				bp_get_template_part( 'members/single/forums'   );
-
 			elseif ( bp_is_user_notifications() ) :
 				bp_get_template_part( 'members/single/notifications' );
 
@@ -96,7 +101,12 @@
 
 			endif;
 
-			 ?>
+			/**
+			 * Fires after the display of member body content.
+			 *
+			 * @since 1.2.0
+			 */
+			do_action( 'bp_after_member_body' ); ?>
 
 		</div><!-- #item-body -->
 
