@@ -83,10 +83,6 @@
 
 /* freemius bug - quick interrim hide */
 
-h2.nav-tab-wrapper {
-    display: none !important;
-}
-
 .fs-sub.larry-theme.addons,
 .fs-sub.larry-theme.pricing {
     display: none;
