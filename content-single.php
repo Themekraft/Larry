@@ -58,20 +58,20 @@
 							<?php
 
 								/* translators: used between list items, there is a space after the comma */
-								$tag_list = get_the_tag_list( '', __( ', ', '_tk' ) );
+								$tag_list = get_the_tag_list( '', ', ' );
 
 								if ( ! _tk_categorized_blog() ) {
 									// This blog only has 1 category so we just need to worry about tags in the meta text
 									if ( '' != $tag_list ) {
-										$meta_text = __( '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s.', '_tk' );
+										$meta_text = '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s.';
 									}
 
 								} else {
 									// But this blog has loads of categories so we should probably display them here
 									if ( '' != $tag_list ) {
-										$meta_text = __( '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s. ', '_tk' );
+										$meta_text = '<i class="fa fa-tags" style="margin-right: 4px;"></i> Tagged %2$s. ';
 									} else {
-										// $meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', '_tk' );
+										// $meta_text = 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
 									}
 
 								} // end check for categories on this blog
@@ -85,7 +85,7 @@
 						</i>
 					</small>
 
-					<?php edit_post_link( __( 'Edit', '_tk' ), '<p style="margin: 20px 0;"><small class="edit-link">', '</small></p>' ); ?>
+					<?php edit_post_link( __( 'Edit', 'larry' ), '<p style="margin: 20px 0;"><small class="edit-link">', '</small></p>' ); ?>
 
 				</footer><!-- .entry-meta -->
 
