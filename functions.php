@@ -321,6 +321,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 			if ( is_product() ) {
 				echo '<div class="main-content"><div class="container"><div class="row"><div class="main-content-inner col-xs-12">';
 			} else {
+				$add_classes = '';
 				if ( get_theme_mod( 'larry_wc_archive_sidebars' ) == true ) {
 					$add_classes = 'col-md-8';
 				}
@@ -343,39 +344,37 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
 
     // Redirect to checkout when adding to cart
-		if ( get_theme_mod( 'larry_wc_redirect_to_checkout' ) == true ):
-	    add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
-	    function redirect_to_checkout() {
-	        global $woocommerce;
-	        $checkout_url = $woocommerce->cart->get_checkout_url();
-	        return $checkout_url;
-	    }
-		endif;
-
-		// Add category name to product loop item
-		add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
-		function tk_add_cat_to_loop() {
-			global $woocommerce, $product, $post;
-			$categ = $product->get_categories();
-    	echo '<small class="larry-wc-loop-cats">'.$categ.'</small>';
+	if ( get_theme_mod( 'larry_wc_redirect_to_checkout' ) == true ):
+		add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+		function redirect_to_checkout() {
+			return wc_get_checkout_url();
 		}
+	endif;
 
-		// Redirect to Thank You page after payment successful
-		// add_action( 'woocommerce_thankyou', function(){
-		//     global $woocommerce;
-		//     $order = new WC_Order();
-		//        if ( $order->status != 'failed' ) {
-		//         wp_redirect( home_url().'/thank-you' ); exit;
-		//        }
-		// });
+	// Add category name to product loop item
+	add_action( 'woocommerce_shop_loop_item_title', 'tk_add_cat_to_loop' );
+	function tk_add_cat_to_loop() {
+		global $product;
+		$categ = wc_get_product_category_list( $product->get_id() );
+		echo '<small class="larry-wc-loop-cats">'.$categ.'</small>';
+	}
 
-		// Change number or products per row to 3
-		add_filter('loop_shop_columns', 'loop_columns');
-		if (!function_exists('loop_columns')) {
-			function loop_columns() {
-				return 4; // 3 products per row
-			}
+	// Redirect to Thank You page after payment successful
+	// add_action( 'woocommerce_thankyou', function(){
+	//     global $woocommerce;
+	//     $order = new WC_Order();
+	//        if ( $order->status != 'failed' ) {
+	//         wp_redirect( home_url().'/thank-you' ); exit;
+	//        }
+	// });
+
+	// Change number or products per row to 3
+	add_filter('loop_shop_columns', 'loop_columns');
+	if (!function_exists('loop_columns')) {
+		function loop_columns() {
+			return 4; // 3 products per row
 		}
+	}
 
 }
 
