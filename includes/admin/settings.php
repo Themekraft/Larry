@@ -61,6 +61,7 @@ function larry_screen() { ?>
 
 		</div>
 
+		<!--
 		<div class="xlarry-panel">
 			<div class="xlarry-panel-content">
 
@@ -79,8 +80,7 @@ function larry_screen() { ?>
 		
 			</div>
 		</div>
-
-
+		-->
 
 
     </div><?php
