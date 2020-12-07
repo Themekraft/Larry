@@ -140,7 +140,7 @@
 								<?php if ( get_theme_mod( 'larry_wc_show_top_nav_cart' ) == 'always' || get_theme_mod( 'larry_wc_show_top_nav_cart' ) == 'notempty' && WC()->cart->get_cart_contents_count() != 0 ) { ?>
 
 									<li class="tk-cart-li">
-										<a class="tk-cart <?php if ( WC()->cart->get_cart_contents_count() != 0 ) { echo ' new '; } ?>" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+										<a class="tk-cart <?php if ( WC()->cart->get_cart_contents_count() != 0 ) { echo ' new '; } ?>" href="<?php echo wc_get_cart_url(); ?>">
 											<i class="fa fa-shopping-cart"></i>
 											<span class="tk-marker <?php if ( WC()->cart->get_cart_contents_count() != 0 ) { echo ' new '; } ?>"></span>
 										</a>
