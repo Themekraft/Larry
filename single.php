@@ -29,7 +29,7 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'single' ); ?>
 
           <?php wp_link_pages( array(
-      				'before' => '<div class="page-links">' . __( 'Pages:', '_tk' ),
+      				'before' => '<div class="page-links">' . __( 'Pages:', 'larry' ),
       				'after'  => '</div>',
       			) ); ?>
 

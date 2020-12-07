@@ -20,11 +20,6 @@
 			</p>
       <p id="allowed-formats-bp"><small>Formats: JPG, GIF or PNG</small></p>
 
-			<!--
-      <h4>Using Gravatar</h4>
-      <p>If there is a <a href="http://gravatar.com" title="Gravatar = Globally Recognized Avatar">Gravatar</a> associated with your account email we will use that!</p>
-			-->
-
       <?php if ( bp_get_user_has_avatar() ) : ?>
 				<!-- <p><?php //  _e( "If you'd like to delete your current avatar without uploading a new one, please use the delete avatar button.", 'larry' ); ?></p> -->
 				<!-- <h4>Delete Avatar</h4> -->

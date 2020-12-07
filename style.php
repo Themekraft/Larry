@@ -13,14 +13,14 @@ function larry_add_customizer_CSS() {
       a,
       #buddypress ul.button-nav li a,
       .buddypress.widget #members-list .item-title a {
-        color: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+        color: <?php echo esc_attr( get_theme_mod( 'larry_link_color' ) ); ?>;
       }
       .btn-primary,
       #topnav .tk-marker.new,
       .bp-user #buddypress #item-nav ul li.current a,
       .bp-user #buddypress #item-nav ul li.selected a,
       body.buddypress.bp-default-cover div#item-header, .bp-default-cover #buddypress div#item-header {
-        background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+        background: <?php echo esc_attr( get_theme_mod( 'larry_link_color' ) ); ?>;
       }
       /* BuddyPress Buttons */
       #buddypress .comment-reply-link,
@@ -31,22 +31,22 @@ function larry_add_customizer_CSS() {
       #buddypress input[type=reset],
       #buddypress input[type=submit],
       a.bp-title-button {
-        background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+        background: <?php echo esc_attr( get_theme_mod( 'larry_link_color' ) ); ?>;
       }
       /* LifterLMS Buttons */
       .llms-button-action,
       .llms-next-lesson .llms-lesson-preview .llms-lesson-link {
-        background: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+        background: <?php echo esc_attr( get_theme_mod( 'larry_link_color' ) ); ?>;
       }
       /* BuddyPress Member Profile Header BG Color */
       #buddypress #header-cover-image {
-        background-color: <?php echo get_theme_mod( 'larry_link_color' ); ?>;
+        background-color: <?php echo esc_attr( get_theme_mod( 'larry_link_color' ) ); ?>;
       }
 
 
 
       /* Link Hover Color */
-      <?php $hover_color = adjustBrightness( get_theme_mod( 'larry_link_color' ), 30); ?>
+      <?php $hover_color = adjustBrightness( esc_attr( get_theme_mod( 'larry_link_color' ) ), 30); ?>
 
       a:hover,
       a:focus {

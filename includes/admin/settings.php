@@ -61,12 +61,7 @@ function larry_screen() { ?>
 
 		</div>
 
-
-
-
-
-
-
+		<!--
 		<div class="xlarry-panel">
 			<div class="xlarry-panel-content">
 
@@ -74,21 +69,18 @@ function larry_screen() { ?>
 				<div class="larry-panel-column-container">
 					<div class="larry-col-small">
 						<p class="larry-lead">A Simple WordPress Demo:</p>
-						<!-- <p>See a minimal demo - just a WordPress install</p> -->
-		        <p><a href="https://themekraft.com/larry-demo/" class="button xbutton-primary button-larry" title="View Larry's Minimal Demo" target="_blank">View Simple Demo</a></p>
+		        		<p><a href="https://themekraft.com/larry-demo/" class="button xbutton-primary button-larry" title="View Larry's Minimal Demo" target="_blank">View Simple Demo</a></p>
 					</div>
 
 					<div class="larry-col-big">
-		        <p class="larry-lead">WooCommerce &amp; BuddyPress Demo:</p>
-						<!-- <p>See the demo site with WooCommerce and BuddyPress</p> -->
-		        <p><a href="https://themekraft.com/larry-demo-full/" class="button xbutton-primary button-larry" title="View Larry's Full Demo" target="_blank">View Full Demo</a></p>
+		        		<p class="larry-lead">WooCommerce &amp; BuddyPress Demo:</p>
+		        		<p><a href="https://themekraft.com/larry-demo-full/" class="button xbutton-primary button-larry" title="View Larry's Full Demo" target="_blank">View Full Demo</a></p>
 					</div>
 				</div>
-
+		
 			</div>
 		</div>
-
-
+		-->
 
 
     </div><?php

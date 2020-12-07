@@ -22,6 +22,7 @@
 
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>
+	<?php wp_body_open(); ?>
 
 
 <div id="slidenav-wrap">
