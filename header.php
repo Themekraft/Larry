@@ -58,32 +58,6 @@
 
 
 
-<!-- <header id="topnav-mini">
-	<div class="container nopad">
-		<div class="row">
-			<div class="col-xs-12">
-
-				<?php // The Top Nav Mini ?>
-				<?php wp_nav_menu(
-					array(
-						'theme_location' 	=> 'topnav-mini',
-						'depth'             => 2,
-						'container'         => 'div',
-						'container_class'   => 'topnav-mini',
-						'menu_class' 		=> 'nav navbar-nav',
-						'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-						'menu_id'			=> 'main-menu',
-						'walker' 			=> new wp_bootstrap_navwalker()
-					)); ?>
-
-
-			</div>
-		</div>
-	</div>
-</header> -->
-
-
-
 <header id="topnav">
 	<div class="container nopad">
 		<div class="row">
